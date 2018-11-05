@@ -1,4 +1,4 @@
-# Summary of Well-Architected Framework
+# Summary of AWS Well-Architected Framework
 * PDF, Jun 2018
 
 ## Table of Contents
@@ -24,7 +24,7 @@ Appendix: Well-Architected Questions, Answers, and Best Practices
 	Cost Optimization
 ```
 
-## Introduction
+## 1. Introduction
 ### Definitions
 * Five pillars: OE, Security, Reliability, Performance Efficiency, Cost Optimization.
 * The first two are not traded-of against the others.
@@ -40,7 +40,7 @@ Each team should have the expertise to evaluate and build robust solution on top
 * Drive architectures using data.
 * Simulate production cheaper and faster.
 
-## The Five Pillars of the Well-Architected Framework
+## 2. The Five Pillars of the Well-Architected Framework
 ### Operational Excellence
 Design Principles:
 * Infrastcurture as code
@@ -63,5 +63,25 @@ Design Principles:
 * Prepare for security events.
 
 ### Reliability
+Design Principles:
+* Test recovery procedures
+* Automatic recovery
+* Scale horizontally
+* Provision resources accurately
+* Manage change with automation
+
+#### Services
+General service for reliability: Amazon CloudWatch
+* Foundations: IAM, VPC, AWS Trusted Advisor, AWS Shield
+* Change Management: CloudTrail, AWS Config, Auto Scaling, CloudWatch
+* Failure Management: AWS CloudFormation, S3 for backups, Glacier for archives, AWS KMS.
+
 ### Performance Efficiency
+Design Principles:
+* Avoid implementing solutions that exist as cloud services
+* Deploy your system to muliple regions quickly
+* Use serverless architecture
+* Experiment
+* Choose the right technology for your use-case
+
 ### Cost Optimization
