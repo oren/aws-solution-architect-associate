@@ -98,3 +98,98 @@ Design Principles:
 * Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
 
 ## 3. Review Process 
+
+## 4. Questions, Answers, and Best Practices
+### 4.1 Operational Excellence
+#### 4.1.1 Prepare
+** OPS 1 What factors drive your operational priorities? **
+
+Operational priorities are the focus areas of your operations efforts. Clearly define and agree to
+your operations priorities to maximize the benefits of your operations efforts.
+
+Best practices:
+* Evaluate business needs: Involve both business and development teams when setting
+operational priorities to ensure that you have a thorough understanding of what
+operational support is required to achieve business outcomes.
+* Evaluate compliance requirements: Consider external factors, such as regulatory
+compliance requirements and industry standards to ensure you are aware of potential
+obligations that may mandate or emphasize specific operational priorities.
+* Evaluate risk: Operational priorities are frequently tradeoffs between competing interests.
+For example, accelerating speed to market for new features may be emphasized over cost
+optimization. Consider risks against potential benefits to ensure you are making informed
+decisions when setting your operational priorities.
+
+** OPS 2 How do you design your workload to enable operability? **
+
+The majority of the lifetime of a workload is typically spent in an operating state. Consider
+operations needs as a part of system design to help you enable long term sustainment of your
+workload.
+
+Best practices:
+* Share design standards: Share existing best practices, guidance, and governance
+requirements across teams, and include shared design standards in system design to
+reduce complexity and maximize the benefits from development efforts. Ensure that
+procedures exist to request changes, additions, and exceptions to design standards to
+support continual improvement and innovation.
+* Design for cloud operations: Leverage features of cloud environments in your workload
+design (e.g. elasticity, on-demand scalability, pay-as-you-go pricing, automation) to
+enable operations capabilities such as rapid improvement iterations and lower risk
+experimentation.
+* Provide insights into workload behavior: Build instrumentation into your system design
+(for example logs, metrics, and counters) to enable your understanding what is going
+on in the system and allow you to measure performance of the system across individual
+components.
+* Provide insights into customer behavior: Build instrumentation into your system design
+(for example logs, metrics, and counters) to enable your understanding of how the
+customer uses the system and the quality of the customer experience.
+* Implement practices that reduce defects, ease remediation, and improve flow: Adopt
+approaches that improve flow and that enable fast feedback on quality, refactoring,
+and bug fixing to help you to rapidly identify and remediate issues introduced through
+deployment activities.
+* Mitigate deployment risks: Use approaches such as frequent small reversible changes,
+automated deployments, testing, canary or one-box deployments, blue-green, etc. to help
+you to limit the impact of issues introduced through the implementation of changes and
+enable rapid recovery.
+
+** OPS 3 How do you know that you are ready to support a workload? **
+
+Evaluate the operational readiness of your workload, processes and procedures, and personnel
+to help you understand the operational risks related to your workload.
+
+Best practices:
+* Continuous improvement culture: Cultivate a continuous improvement culture to
+empower your personnel to identify and act upon opportunities for improvement. Develop
+a continuous improvement culture by emphasizing that change is constant, that failure is
+expected, and that improvement and innovation are achieved through experimentation.
+Provide a safe environment for experimentation where it is accepted that experiments do
+not always achieve desired outcomes.
+* Share understanding of the value to the business: Have cross-team understanding of
+the criticality of the workload to the business with procedures to engage across teams for
+resources when needed to help you address operational issues.
+* Ensure personnel capability: Have a mechanism to validate that you have an appropriate
+number of trained personnel to provide support for operational needs. Train personnel
+and adjust personnel capacity as necessary to maintain effective support.
+* Documented accessible governance and guidance: Publish standards that are accessible,
+readily understood, and are measurable for compliance to help guide and educate your
+personnel enabling their compliance. Ensure that procedures exist to request changes,
+additions, and exceptions to standards to support continual improvement and innovation.
+* Use checklists: Use checklists to ensure you have a consistent evaluation of your readiness
+to operate a workload. Checklists should include at a minimum the operational readiness
+of the teams and the workload, and security considerations. Checklist elements may
+be hard requirements or risk based decisions may be made to operate a workload that
+does not satisfy all requirements. Checklist elements may be specific to a workload,
+architecture, or may be implementation dependent. Script and automate checklists where
+appropriate to ensure consistency, speed execution, and limit human error.
+* Use runbooks: Have runbooks to help enable consistent and prompt responses to wellunderstood
+events through documented procedures to achieve specific outcomes.
+Effective procedures should contain the minimum information for an adequately skilled
+person to achieve a desired outcome. Script and automate runbooks where appropriate to
+ensure consistency, speed responses, and limit human error.
+* Use playbooks: Have playbooks to help enable consistent and prompt responses to failure
+scenarios by documenting the processes to identify underlying issues. Effective processes
+should guide an adequately skilled person through identifying potential sources of failure,
+isolating faults, determining root cause, and remediation. Script and automate playbooks
+where appropriate to ensure consistency, speed responses, and limit human error.
+* Practice recovery: Identify potential failure scenarios, remove the sources of failure where
+possible, develop and test responses to failures to limit their impact when they occur and
+help ensure prompt and effective responses.
