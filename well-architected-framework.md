@@ -193,3 +193,99 @@ where appropriate to ensure consistency, speed responses, and limit human error.
 * Practice recovery: Identify potential failure scenarios, remove the sources of failure where
 possible, develop and test responses to failures to limit their impact when they occur and
 help ensure prompt and effective responses.
+
+
+#### 4.1.2 Operate
+**OPS 4 What factors drive your understanding of operational health?**
+
+Define metrics for the evaluation of your workload and processes to help you understand
+operations effectiveness in supporting business outcomes. Capture and analyze metrics to gain
+visibility to processes and events so that you can take appropriate action.
+
+Best practices:
+* Define expected business and customer outcomes: Have a documented definition of
+what success looks like for the workload from a business and customer perspective to use
+as evaluation criteria when evaluating operations success.
+* Identify success metrics: Define metrics to measure the behavior of the workload against
+business and customer expectations to know if your workload is achieving them.
+* Identify workload metrics: Define metrics to measure the status of the workload and its
+components against the success metrics to know if your workload is achieving them.
+* Identify operations metrics: Define metrics to measure the execution of operations
+activities (runbooks and playbooks) to know if you are achieving operational outcomes
+that support the business needs.
+* Established baselines: Establish baselines for metrics to provide expected values as the
+basis for comparisons.
+* Collect and analyze metrics: Perform regular proactive reviews of metrics to identify
+trends and determine where appropriate responses are needed.
+* Validate insights: Review your analysis results and responses with cross-functional teams
+and business owners to help establish common understanding, identify additional impacts,
+and determine courses of action. Adjust responses as appropriate.
+* Business-level view of operations: Create a business-level view of operations to help you
+determine if you are satisfying needs and to help identify areas that need improvement to
+reach business goals.
+
+**OPS 5 How do you manage operational events?**
+Prepare and validate procedures to respond to operational events to help you minimize their
+potential disruption to your workload.
+
+Best practices:
+* Determine priority of operational events based on business impact: Base the priority
+of events on business impact to ensure that when multiple events require intervention
+those that are most significant to the business are addressed first. For example impacts
+can include loss of life or injury, financial loss, or damage to reputation or trust.
+* Processes for event, incident, and problem management: Have processes to address
+observed events, events that require intervention (incidents), and events that require
+intervention and either recur or cannot currently be resolved (problems). Use these
+processes to help you to mitigate the impact of those events on the business and your
+customers by ensuring timely and appropriate responses.
+* Process per alert: Have a well-defined response (runbook or playbook), with a specifically
+identified owner, for any event for which you raise an alert. By doing so you ensure
+effective and prompt responses to operations events and prevent actionable events from
+being obscured by less valuable notifications.
+* Identify decision makers: Identify decision makers who are empowered to determine
+operations actions on behalf of their organizations. Escalate to decision makers as
+appropriate when operations activities may impact their business outcomes to ensure
+informed decisions. Runbooks and playbooks should be pre-approved by decision makers
+where appropriate to ensure prompt responses to events.
+* Defined escalation paths: Defined escalation paths in your runbooks and playbooks
+including what triggers escalation, procedures for escalation, and specifically identify
+owners for each action, to help ensure effective and prompt responses to operations
+events. Escalations may include third parties.
+* Push notifications: Direct communications to your users (for example, with email or SMS)
+when the services they consume are impacted, and when they return to normal operating
+conditions, to enable them to take appropriate action in response.
+* Communicate status through dashboards: Provide dashboards tailored to their
+target audiences (for example, internal technical teams, leadership, and customers) to
+communicate the current operating status of the business and provide metrics of interest.
+Examples include Amazon CloudWatch dashboards, AWS Personal Health Dashboard, and
+Service Health Dashboard.
+* Process for root cause analysis: Have a process to identify and document the root cause
+of an event so that you can develop mitigations to limit or prevent recurrence and you
+can develop procedures for prompt and effective responses. Communicated root cause as
+appropriate, tailored to target audiences.
+
+#### 4.1.3 Evolve
+**OPS 6 How do you evolve operations?**
+Dedicate time and resources for continuous incremental improvement to help evolve the
+effectiveness and efficiency of your operations.
+
+Best practices:
+* Process for continuous improvement: Dedicated time and resources within your
+operations processes to make continuous incremental improvements possible. Regularly
+evaluate and prioritize opportunities for improvement to help focus resources where they
+will have the greatest benefits.
+* Define drivers for improvement: Identify your drivers for improvement to help you
+evaluate and prioritize opportunities. Evaluate opportunities for improvement by
+considering desired features, capabilities, and improvements; unacceptable issues, bugs,
+and vulnerabilities; and updates required to maintain compliance with policy or support
+from a third party.
+* Implement Feedback loops: Include feedback loops in your procedures to help enable
+your identification of issues and areas in need of improvement.
+* Document and share lessons learned: Document and share lessons learned from the
+execution of operations activities so that you can leverage them internally and across
+teams. Analyze trends in lessons learned to identify issues and areas to investigate for
+improvement opportunities.
+* Perform operations metrics reviews: Regularly perform retrospective analysis of
+operations metrics with cross-team participants from different areas of the business to
+identify opportunities for improvement, potential courses of action, and to share lessons
+learned.
