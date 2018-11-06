@@ -25,14 +25,14 @@
 ```
 
 ## 1. Introduction
-### Definitions
+### 1.1 Definitions
 * Five pillars: OE, Security, Reliability, Performance Efficiency, Cost Optimization.
 * The first two are not traded-of against the others.
 
-### On Architecture
+### 1.2 On Architecture
 Each team should have the expertise to evaluate and build robust solution on top of AWS. The key for doing it is set of practices and mechanisms. Well-Architected Framework (I'll call it WAF from now on) is the main mechanism. It allows CTOs and other tech leaders evaluate, compare, and identify gaps and needs across the organization.
 
-### General Design Principles
+### 1.3 General Design Principles
 * Use only the resources you need thanks to auto scaling of cloud resources.
 * Test systems at production scale thanks to on-demand infrastructure.
 * Automate to increases your ability to experiment.
@@ -41,7 +41,7 @@ Each team should have the expertise to evaluate and build robust solution on top
 * Simulate production cheaper and faster.
 
 ## 2. The Five Pillars of the Well-Architected Framework
-### Operational Excellence
+### 2.1 Operational Excellence
 Design Principles:
 * Infrastructure as code
 * Annotate documentation
@@ -52,7 +52,7 @@ Design Principles:
 #### Services
 CloudFormation, AWS Config, AWS Config rules (standards for workloads), CloudWatch, ElasticSearch (analyze logs)
 
-### Security
+### 2.2 Security
 Design Principles:
 * Separate duties and give minimal access.
 * Enable traceability.
@@ -62,7 +62,7 @@ Design Principles:
 * Keep people away from data.
 * Prepare for security events.
 
-### Reliability
+### 2.3 Reliability
 Design Principles:
 * Test recovery procedures
 * Automatic recovery
@@ -76,7 +76,7 @@ General service for reliability: Amazon CloudWatch
 * Change Management: CloudTrail, AWS Config, Auto Scaling, CloudWatch
 * Failure Management: AWS CloudFormation, S3 for backups, Glacier for archives, AWS KMS.
 
-### Performance Efficiency
+### 2.4 Performance Efficiency
 Design Principles:
 * Avoid implementing solutions that exist as cloud services
 * Deploy your system to multiple regions quickly
@@ -84,7 +84,7 @@ Design Principles:
 * Experiment
 * Choose the right technology for your use-case
 
-### Cost Optimization
+### 2.5 Cost Optimization
 * Adopt a consumption model
 * Measure overall efficiency
 * Stop spending money on data center operations
@@ -96,3 +96,5 @@ Design Principles:
 * Match supply and demand: Auto Scaling.
 * Expenditure Awareness: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
 * Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
+
+## 3. Review Process 
