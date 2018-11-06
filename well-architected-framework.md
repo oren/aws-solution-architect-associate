@@ -225,6 +225,7 @@ determine if you are satisfying needs and to help identify areas that need impro
 reach business goals.
 
 **OPS 5 How do you manage operational events?**
+
 Prepare and validate procedures to respond to operational events to help you minimize their
 potential disruption to your workload.
 
@@ -266,6 +267,7 @@ appropriate, tailored to target audiences.
 
 #### 4.1.3 Evolve
 **OPS 6 How do you evolve operations?**
+
 Dedicate time and resources for continuous incremental improvement to help evolve the
 effectiveness and efficiency of your operations.
 
