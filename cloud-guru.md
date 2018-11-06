@@ -167,3 +167,50 @@ Enable on a bucket. You get an endpoint.
 URL for website on S3: http://mycloudguru3.website.s3-website-us-east-1.amazonaws.com (sitename.website-region.amazonaws.com)
 
 URL for bucket: https://s3-eu-west-1.amazonaws.com/acloudguru1234
+
+## EC2
+
+1. On-demand - no commitment. unpredictable workloads, testing.
+1. Reserved Instance - 1 or 3 years. predictable usage. cheaper than on-demand.
+1. standard RI - up to 75% off on-demand
+11.   convertible RIs - up to 54% off on-demand. can change the cpu/memory attributes.
+11.   Scheduled RI - only have EC2 at certain time. once a day, week, month, etc.
+1. Spot - bid whatever price you want for instance capacity. apps that have flexible start and end times. apps that are only feasible at very low compute prices. genomics companies that only need a lot of resources on a certain time. If a spot instance is terminated by Amazon EC2, you don't get charged for a partial hour of usage. However, if you termitane the instance yourself, you will be charged for the complete hour in which the instance ran.
+1. Dedicated Hosts - physical EC2. Regulatory/privacy. licensing limitation. up to 70% off on-demand.
+
+EC2 Instance types:
+
+* F1 - field programmable gate array. genomic research, financial analytics, real-time video processing, big data
+* I3 - high speed storage, NoSQL DBs, Data Warehousing
+* G3 - Graphics Intensive, Video Encoding / 3D Application streaming
+* H1 - high disk throughput, MapReduce-based workloads, distributed file system such as HDFS and MapR-FS
+* T2 - lower cost, general purpose, web servers / small dbs
+* D2 - dense storage, fileservers / data warehousing / hadoop
+* R4 - memory optimized, memory intensive apps / DBs
+* M5 - general purpose, application servers
+* C5 - compute optimized, cpu intensive apps / DBs
+* P3 - graphics / general purpose GPU, machine learning, bit coin mining etc
+* X1 - memory optimized, SAP HANA / Apache Spark etc
+
+Fight Dr MC PX:
+
+F - FPGA, I - IOPS, G - Graphics, H - High Disk Throughput, T - cheap general purpose (think T2 Micro), D - Density, R - Ram, M - main choice for general purpose apps, C - compute, P - Graphics (think pics), X - Extreme Memory.
+
+EBS - elastic block storage
+
+EBS Volume Types:
+
+1. SSD
+11. General Purpose SSD (GP2) - balance price and performance. ratio of 3IOPS per GB with up to 10,000 IOPS and ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 GiB and above.
+11. Provisioned IOPS SSD (IO1) - designed for i/o intensive apps such as large relational or NoSQL dbs. use it if you need more than 10,000 IOPS. Can provision up ot 20,000 IOPS per volume.
+1. Magnetic
+11. Throughput Optimized HDD (ST1) -low cost HDD volume. designed for frequently accessed, throughput-intensive workloads - Big data, data warehouse, log processing. can't be a boot volume.
+11. Cold HDD (CS1) - lowest cost storage for infrequently accessed workloads. usecase: file server. can't be a boot volume.
+11. Magnetic (standard) - legacy. lowest cost per gigabyte of all EBS volume types. infrequent access. Can be a boot volume.
+
+**EC2 Lab**
+
+
+
+ 
+
