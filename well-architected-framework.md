@@ -3,25 +3,25 @@
 
 ## Table of Contents
 ```
-Introduction
-	Definitions
-	On Architecture
-	General Design Principles
-The Five Pillars of the Well-Architected Framework
-	Operational Excellence
-	Security
-	Reliability
-	Performance Efficiency
-	Cost Optimization
-The Review Process
-Conclusion
-Further Reading
-Appendix: Well-Architected Questions, Answers, and Best Practices
-	Operational Excellence
-	Security
-	Reliability
-	Performance Efficiency
-	Cost Optimization
+1. Introduction
+  Definitions
+  On Architecture
+  General Design Principles
+2. The Five Pillars of the Well-Architected Framework
+  Operational Excellence
+  Security
+  Reliability
+  Performance Efficiency
+  Cost Optimization
+3. The Review Process
+4. Conclusion
+5. Further Reading
+6. Appendix: Well-Architected Questions, Answers, and Best Practices
+  Operational Excellence
+  Security
+  Reliability
+  Performance Efficiency
+  Cost Optimization
 ```
 
 ## 1. Introduction
