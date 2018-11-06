@@ -1,6 +1,5 @@
-Create an app with a single stack that contain an S3 bucket:
+// Create an app with a single stack that contain an S3 bucket:
 
-```
 const cdk = require('@aws-cdk/cdk');
 const s3 = require('@aws-cdk/aws-s3');
 
@@ -22,5 +21,4 @@ class MyApp extends cdk.App {
 }
 
 new MyApp().run();
-```
 
