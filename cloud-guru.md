@@ -2,7 +2,7 @@
 
 ## AWS - 10,000 Foot Overview
 
-* **Global Infrastructure: **Region** (**physical location with two or more AZs), AZ (data center), Edge location** (**endpoint for AWS for caching. Usually consist of CloudFront).
+* **Global Infrastructure:** Region (physical location with two or more AZs), AZ (data center), Edge location (endpoint for AWS for caching. Usually consist of CloudFront).
 * **Compute**: EC2, EC2 Container Service, Elastic Beanstalk, Lambda, Lightsale, Batch
 * **Storage**: S3, EFS (elastic file system), Glacier, Snowball, Storage Gateway (hybrid storage service that enables your on-premises applications to seamlessly use storage in the AWS Cloud)
 * **Databases**: RDS (MySQL, PostgerSQL, Aurora), DynamoDB, Elasticache, Red Shift (Data
