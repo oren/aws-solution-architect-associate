@@ -102,7 +102,7 @@ Design Principles:
 ## 4. Questions, Answers, and Best Practices
 ### 4.1 Operational Excellence
 #### 4.1.1 Prepare
-** OPS 1 What factors drive your operational priorities? **
+**OPS 1 What factors drive your operational priorities?**
 
 Operational priorities are the focus areas of your operations efforts. Clearly define and agree to
 your operations priorities to maximize the benefits of your operations efforts.
@@ -119,7 +119,7 @@ For example, accelerating speed to market for new features may be emphasized ove
 optimization. Consider risks against potential benefits to ensure you are making informed
 decisions when setting your operational priorities.
 
-** OPS 2 How do you design your workload to enable operability? **
+**OPS 2 How do you design your workload to enable operability?**
 
 The majority of the lifetime of a workload is typically spent in an operating state. Consider
 operations needs as a part of system design to help you enable long term sustainment of your
@@ -151,7 +151,7 @@ automated deployments, testing, canary or one-box deployments, blue-green, etc. 
 you to limit the impact of issues introduced through the implementation of changes and
 enable rapid recovery.
 
-** OPS 3 How do you know that you are ready to support a workload? **
+**OPS 3 How do you know that you are ready to support a workload?**
 
 Evaluate the operational readiness of your workload, processes and procedures, and personnel
 to help you understand the operational risks related to your workload.
