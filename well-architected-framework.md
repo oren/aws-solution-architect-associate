@@ -43,8 +43,8 @@ Each team should have the expertise to evaluate and build robust solution on top
 ## 2. The Five Pillars of the Well-Architected Framework
 ### Operational Excellence
 Design Principles:
-* Infrastcurture as code
-* Anotate documentation
+* Infrastructure as code
+* Annotate documentation
 * Improve your processes
 * Test failure scenarios and your response processes
 * Learn and share your learning with the organization
@@ -55,7 +55,7 @@ CloudFormation, AWS Config, AWS Config rules (standards for workloads), CloudWat
 ### Security
 Design Principles:
 * Separate duties and give minimal access.
-* Enable tracebility.
+* Enable traceability.
 * Apply security in all layers.
 * Automate security best practices.
 * Protect data in transit and at rest.
@@ -79,9 +79,20 @@ General service for reliability: Amazon CloudWatch
 ### Performance Efficiency
 Design Principles:
 * Avoid implementing solutions that exist as cloud services
-* Deploy your system to muliple regions quickly
+* Deploy your system to multiple regions quickly
 * Use serverless architecture
 * Experiment
 * Choose the right technology for your use-case
 
 ### Cost Optimization
+* Adopt a consumption model
+* Measure overall efficiency
+* Stop spending money on data center operations
+* Analyze and attribute expenditure
+* Use managed and application level services to reduce cost of ownership
+
+### Services
+* Cost-effective Resources: Cost Explorer - RI recommendations and more. CloudWatch and Trust Advisor. Aurora - remove licensing costs. AWS Direct Connect and Amazon CloudFront to optimize data transfer.
+* Match supply and demand: Auto Scaling.
+* Expenditure Awareness: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
+* Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
