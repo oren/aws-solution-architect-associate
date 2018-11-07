@@ -570,7 +570,7 @@ event is detected; for example, to replace failed components.
 * Reviews are conducted regularly: Frequently review the monitoring of the system based
 on significant events and changes to evaluate the architecture and implementation.
 
-REL 5 How do you implement change?
+**REL 5 How do you implement change?**
 
 Uncontrolled changes to your environment make it difficult to predict the effect of a change.
 Controlled changes to provisioned AWS resources and workloads are necessary to ensure that
@@ -581,10 +581,12 @@ Best practices:
 * Changes are deployed with automation: Deployments and patching are automated.
 
 #### 3.3.2 Failure Management
-REL 6 How do you back up data?
+**REL 6 How do you back up data?**
+
 Back up data, applications, and operating environments (defined as operating systems
 configured with applications) to meet requirements for mean time to recovery (MTTR) and
 recovery point objectives (RPO).
+
 Best practices:
 * Data is backed up manually: Important data is backed up using Amazon S3, Amazon EBS
 snapshots, or third- party software to meet RPO.
@@ -595,12 +597,13 @@ Marketplace solutions, or third-party solutions.
 that your backup process implementation meets Recovery Time Objective and Recovery
 Point Objective through a recovery test.
 * Backups are secured and encrypted: See the AWS Security Best Practices whitepaper.
-56
-Amazon Web Services AWS Well-Architected Framework
-REL 7 How does your system withstand component failures?
+
+**REL 7 How does your system withstand component failures?**
+
 If your workloads have a requirement, implicit or explicit, for high availability and low mean
 time to recovery (MTTR), architect your workloads for resiliency and distribute your workloads
 to withstand outages.
+
 Best practices:
 * Monitoring is done at all layers of the workload to detect failures: Continuously monitor
 the health of your system and report degradation as well as complete failure.
@@ -622,13 +625,12 @@ Test the resilience of your workload to help you find latent bugs that only surf
 production. Exercise these tests regularly.
 
 Best practices:
-• Use a playbook: Have a playbook for failure scenarios that have not been anticipated.
-• Inject failures to test: Test failures regularly, ensuring coverage of failure pathways.
-• Schedule game days: Use game days to regularly exercise your failure procedures.
-• Conduct root cause analysis (RCA): Review system failures based on significant events to
+* Use a playbook: Have a playbook for failure scenarios that have not been anticipated.
+* Inject failures to test: Test failures regularly, ensuring coverage of failure pathways.
+* Schedule game days: Use game days to regularly exercise your failure procedures.
+* Conduct root cause analysis (RCA): Review system failures based on significant events to
 evaluate the architecture and identify the root cause. Have a method of communicating
 these causes to others as needed.
-
 
 **REL 9 How do you plan for disaster recovery?**
 
