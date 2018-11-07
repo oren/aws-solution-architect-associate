@@ -13,10 +13,7 @@
   Reliability
   Performance Efficiency
   Cost Optimization
-3. The Review Process
-4. Conclusion
-5. Further Reading
-6. Appendix: Well-Architected Questions, Answers, and Best Practices
+3. Appendix: Well-Architected Questions, Answers, and Best Practices
   Operational Excellence
   Security
   Reliability
@@ -97,11 +94,9 @@ Design Principles:
 * Expenditure Awareness: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
 * Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
 
-## 3. Review Process 
-
-## 4. Questions, Answers, and Best Practices
-### 4.1 Operational Excellence
-#### 4.1.1 Prepare
+## 3. Questions, Answers, and Best Practices
+### 3.1 Operational Excellence
+#### 3.1.1 Prepare
 **OPS 1 What factors drive your operational priorities?**
 
 Operational priorities are the focus areas of your operations efforts. Clearly define and agree to
@@ -194,8 +189,7 @@ where appropriate to ensure consistency, speed responses, and limit human error.
 possible, develop and test responses to failures to limit their impact when they occur and
 help ensure prompt and effective responses.
 
-
-#### 4.1.2 Operate
+#### 3.1.2 Operate
 **OPS 4 What factors drive your understanding of operational health?**
 
 Define metrics for the evaluation of your workload and processes to help you understand
@@ -265,7 +259,7 @@ of an event so that you can develop mitigations to limit or prevent recurrence a
 can develop procedures for prompt and effective responses. Communicated root cause as
 appropriate, tailored to target audiences.
 
-#### 4.1.3 Evolve
+#### 3.1.3 Evolve
 **OPS 6 How do you evolve operations?**
 
 Dedicate time and resources for continuous incremental improvement to help evolve the
@@ -292,8 +286,8 @@ operations metrics with cross-team participants from different areas of the busi
 identify opportunities for improvement, potential courses of action, and to share lessons
 learned.
 
-### 4.1 Security 
-#### 4.1.1 Identity and Access Management
+### 3.2 Security 
+#### 3.2.1 Identity and Access Management
 **SEC 1 How do you manage credentials for your workload?**
 
 Credentials include passwords, tokens, and keys that grant access directly or indirectly to
@@ -345,7 +339,7 @@ minimum privileges granted to the system to reduce the risk of unauthorized acce
 * Access requirements clearly defined: Access requirements are clearly defined to reduce
 the risk of unnecessary privileges.
 
-#### 4.1.2 Detective Controls
+#### 3.2.2 Detective Controls
 **SEC 4 How are you aware of security events in your workload?**
 
 Capture and analyze logs and metrics to gain visibility to security threats and events so that
@@ -363,7 +357,7 @@ security should be monitored with automated alerts.
 * AWS marketplace or APN partner solution enabled: A solution from the AWS
 Marketplace or from an APN Partner.
 
-#### 4.1.3 Infrastructure Protection
+#### 3.2.3 Infrastructure Protection
 **SEC 5 How do you protect your networks?**
 
 Public and private networks and services require multiple layers of defense to help protect your
@@ -390,8 +384,8 @@ they are released to identify appropriate protections to improve your security p
 * Using security services and features: Adopting the use of security services and features
 will help you implement controls to protect your workload.
 
-### 4.1 Reliability
+### 3.3 Reliability
 
-### 4.1 Performance Efficiency
+### 3.4 Performance Efficiency
 
-### 4.1 Cost Optimization
+### 3.5 Cost Optimization
