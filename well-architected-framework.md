@@ -1,5 +1,6 @@
 # Summary of AWS Well-Architected Framework
 * PDF, Jun 2018
+* The first PDF on this page: https://aws.amazon.com/architecture/well-architected
 
 ## Table of Contents
 ```
