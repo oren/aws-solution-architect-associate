@@ -291,3 +291,107 @@ improvement opportunities.
 operations metrics with cross-team participants from different areas of the business to
 identify opportunities for improvement, potential courses of action, and to share lessons
 learned.
+
+### 4.1 Security 
+#### 4.1.1 Identity and Access Management
+**SEC 1 How do you manage credentials for your workload?**
+
+Credentials include passwords, tokens, and keys that grant access directly or indirectly to
+manage your workload. Protect credentials with appropriate mechanisms to help you reduce
+the risk of accidental or malicious use.
+
+Best practices:
+* Enforce use of multi-factor authentication (MFA): Enforce multi-factor authentication
+(MFA) with software or hardware tokens to provide additional access control.
+* Enforce password requirements: Enforce the minimum length and complexity of
+passwords to help protect against brute force and other password attacks.
+* Rotate credentials regularly: Rotate credentials regularly to help reduce the risk of old
+credentials being used by previous systems or personnel.
+* Audit credentials periodically: Audit credentials to ensure the appropriate controls (eg
+MFA) are enforced, are rotated regularly and appropriate access level.
+* Using centralized identity provider: An identity provider or directory service is used to
+authenticate users in a centralized place, reducing the requirement for multiple credentials
+and management complexity.
+
+**SEC 2 How do you control human access to services?**
+
+Control human access to services with appropriately defined, limited, and segregated access to
+help you reduce the risk of unauthorized access.
+
+Best practices:
+* Credentials are not shared: Credentials are not shared between any users to help
+segregation of users and traceability.
+* User life-cycle managed: Access is managed through employee life-cycle policies to grant
+only valid users access.
+* Minimum privileges: Users are granted only the minimum privileges needed to
+accomplish their job to reduce the risk of unauthorized access.
+* Access requirements clearly defined: Access requirements are clearly defined for user's
+job function or role to reduce the risk of unnecessary privileges.
+* Access is granted through roles or federation: Using Roles allow for secure cross-account
+access and federated users.
+
+**SEC 3 How do you control programmatic access to services?**
+
+Control programmatic or automated access to services with appropriately limited short-term
+credentials and roles to help you reduce the risk of unauthorized access.
+
+Best practices:
+* Credentials are not shared: Credentials are not shared for programmatic access between
+any systems.
+* Dynamic authentication: Credentials are dynamically acquired and frequently rotated
+from a service or system.
+* Minimum privileges: Programmatic access requirements are clearly defined with only
+minimum privileges granted to the system to reduce the risk of unauthorized access.
+* Access requirements clearly defined: Access requirements are clearly defined to reduce
+the risk of unnecessary privileges.
+
+#### 4.1.2 Detective Controls
+**SEC 4 How are you aware of security events in your workload?**
+
+Capture and analyze logs and metrics to gain visibility to security threats and events so that
+you can take appropriate action.
+
+Best practices:
+* Logging enabled where available: Enabling logging for all services and functions
+improves visibility of events.
+* Analyzing AWS CloudTrail: CloudTrail trails should be automatically analyzed for
+suspicious behavior.
+* Analyzing logs centrally: All logs should be collected centrally and automatically analyzed
+to detect suspicious behavior.
+* Monitoring and alerting for key metrics and events: Key metrics and events related to
+security should be monitored with automated alerts.
+* AWS marketplace or APN partner solution enabled: A solution from the AWS
+Marketplace or from an APN Partner.
+
+#### 4.1.3 Infrastructure Protection
+**SEC 5 How do you protect your networks?**
+
+Public and private networks and services require multiple layers of defense to help protect your
+workloads from network-based threats.
+
+Best practices:
+* Controlling traffic in Virtual Private Cloud (VPC): Using a VPC to isolate and control
+workload traffic.
+* Controlling traffic at the boundary: Control traffic at the boundary or network edge of
+the workload to take advantage of the first opportunity to control traffic and provide a
+layer of protection.
+* Controlling traffic using available features: Controlling traffic using available features,
+including security groups, Network ACLs and subnets, adds layers of protection.
+* AWS marketplace or APN partner solution enabled: A solution from the AWS
+Marketplace or from an APN Partner.
+SEC 6 How do you stay up to date with AWS security features and industry security
+threats?
+Staying up to date and implementing AWS and industry best practices including services and
+features can improve the security of your workload. Being aware of the latest security threats
+will help you build a threat model to identify and implement protective controls.
+Best practices:
+* Evaluating new security services and features: Explore security services and features as
+they are released to identify appropriate protections to improve your security posture.
+* Using security services and features: Adopting the use of security services and features
+will help you implement controls to protect your workload.
+
+### 4.1 Reliability
+
+### 4.1 Performance Efficiency
+
+### 4.1 Cost Optimization
