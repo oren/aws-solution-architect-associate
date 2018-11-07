@@ -489,48 +489,50 @@ can call APIs to protect AWS infrastructure. Evaluate your AWS service needs and
 appropriate changes to your limits for each region.
 
 Best practices:
-• Active monitoring and managing limits: Evaluate your potential usage on AWS via
+* Active monitoring and managing limits: Evaluate your potential usage on AWS via
 Amazon CloudWatch, or a third party product, increase your regional limits appropriately,
 and allow planned growth in usage.
-• Implemented automated monitoring and management of limits: Implement tools using
+* Implemented automated monitoring and management of limits: Implement tools using
 AWS SDKs to alert you when thresholds are being approached. If you have Enterprise
 Support, you can also automate the limit increase request.
-• Aware of fixed service limits: Be aware of unchangeable service limits and architect
+* Aware of fixed service limits: Be aware of unchangeable service limits and architect
 around these.
-• Ensure there is a sufficient gap between the current service limit and the max usage
+* Ensure there is a sufficient gap between the current service limit and the max usage
 to accommodate for fail over: A fail over is when a facility fails. In AWS, this may be an
 isolation zone in your architecture, an Availability Zone (AZ), or an AWS Region. When a fail
 over of an isolation zone or AZ occurs, your automation may make requests for resources
 before the failed resources are terminated. This may cause you to exceed planned limits.
 Ensure you can request resources for a failure of isolation zones before resources have
 been fully decommissioned.
-• Service limits are managed across all relevant accounts and regions: If you are using
+* Service limits are managed across all relevant accounts and regions: If you are using
 multiple AWS accounts or AWS Regions, ensure you request the same limits in all
 environments in which you run your production workloads.
 
 **REL 2 How do you plan your network topology on AWS?**
+
 Applications can exist in one or more environments: EC2-Classic, the default VPC, or VPC(s)
 created by you. Network considerations such as system connectivity, Elastic IP address and
 public IP address management, VPC and private address management, and name resolution
 are fundamental to using resources in the cloud. Well planned and documented deployments
 are essential to reduce the risk of overlap and contention.
+
 Best practices:
-• Connectivity back to data center is not needed: If you do not need connectivity to an
+* Connectivity back to data center is not needed: If you do not need connectivity to an
 existing on-premises network, then planning can be simplified.
-• Highly available connectivity between AWS and on-premises environment is
+* Highly available connectivity between AWS and on-premises environment is
 implemented: Use multiple Direct Connect circuits and multiple VPN tunnels. Use multiple
 Direct Connect locations for high availability. If you use multiple AWS Regions, you will
 also need multiple Direct Connect locations in at least 2 regions. You may want to evaluate
 AWS Marketplace appliances that terminate VPNs. If you use AWS Marketplace appliances,
 deploy redundant instances for high availability in different Availability Zones.
-• Highly available network connectivity for the users of the workload is implemented:
+* Highly available network connectivity for the users of the workload is implemented:
 Use a highly available DNS, load balancing, and/or reverse proxy as the public facing
 endpoint of your application. You may want to evaluate AWS Marketplace appliances for
 load balancing or proxying.
-• Using non-overlapping private IP address ranges in multiple VPCs: The IP ranges of each
+* Using non-overlapping private IP address ranges in multiple VPCs: The IP ranges of each
 of your VPCs should not conflict if they are peered or connected via VPN. The same is true
 for private connectivity to your on-premises environments and other cloud providers.
-• IP subnet allocation accounts for expansion and availability: Individual Amazon VPC IP
+* IP subnet allocation accounts for expansion and availability: Individual Amazon VPC IP
 address ranges should be large enough to accommodate an application’s requirements,
 including factoring in future expansion and allocation of IP addresses to subnets across
 Availability Zones. Additionally, keep some IP addresses available for possible future
@@ -543,11 +545,11 @@ A scalable system provides elasticity to add and remove resources automatically 
 closely match the current demand at any given point in time.
 
 Best practices:
-• Workload scales automatically: Use automatically scalable services, such as Amazon
+* Workload scales automatically: Use automatically scalable services, such as Amazon
 S3, Amazon CloudFront, Auto Scaling, Amazon DynamoDB, Amazon Aurora, Elastic Load
 Balancing, and AWS Lambda or automation created using third party tools and/or AWS
 SDKs.
-• Workload is load tested: Adopt a load testing methodology to measure if scaling activity
+* Workload is load tested: Adopt a load testing methodology to measure if scaling activity
 will meet workload requirements.
 
 
@@ -559,13 +561,13 @@ are crossed or significant events occur. Ideally, when low-performance threshold
 failures occur, the system has been architected to automatically self-heal or scale in response.
 
 Best practices:
-• Monitoring the workload in all tiers: Monitor the tiers of the workload with Amazon
+* Monitoring the workload in all tiers: Monitor the tiers of the workload with Amazon
 CloudWatch or third-party tools. Monitor AWS services with Personal Health Dashboard.
-• Notifications are sent based on the monitoring: Organizations that need to know receive
+* Notifications are sent based on the monitoring: Organizations that need to know receive
 notifications when significant events occur.
-• Automated responses are performed for events: Use automation to take action when an
+* Automated responses are performed for events: Use automation to take action when an
 event is detected; for example, to replace failed components.
-• Reviews are conducted regularly: Frequently review the monitoring of the system based
+* Reviews are conducted regularly: Frequently review the monitoring of the system based
 on significant events and changes to evaluate the architecture and implementation.
 
 REL 5 How do you implement change?
@@ -576,7 +578,7 @@ the workloads and the operating environment are running known software and can b
 or replaced in a predictable manner.
 
 Best practices:
-• Changes are deployed with automation: Deployments and patching are automated.
+* Changes are deployed with automation: Deployments and patching are automated.
 
 #### 3.3.2 Failure Management
 REL 6 How do you back up data?
@@ -584,15 +586,15 @@ Back up data, applications, and operating environments (defined as operating sys
 configured with applications) to meet requirements for mean time to recovery (MTTR) and
 recovery point objectives (RPO).
 Best practices:
-• Data is backed up manually: Important data is backed up using Amazon S3, Amazon EBS
+* Data is backed up manually: Important data is backed up using Amazon S3, Amazon EBS
 snapshots, or third- party software to meet RPO.
-• Data is backed up using automated processes: Automate backups using AWS features (for
+* Data is backed up using automated processes: Automate backups using AWS features (for
 example, snapshots of Amazon RDS and Amazon EBS, versions on Amazon S3, etc.), AWS
 Marketplace solutions, or third-party solutions.
-• Periodic recovery of the data is done to verify backup integrity and processes: Validate
+* Periodic recovery of the data is done to verify backup integrity and processes: Validate
 that your backup process implementation meets Recovery Time Objective and Recovery
 Point Objective through a recovery test.
-• Backups are secured and encrypted: See the AWS Security Best Practices whitepaper.
+* Backups are secured and encrypted: See the AWS Security Best Practices whitepaper.
 56
 Amazon Web Services AWS Well-Architected Framework
 REL 7 How does your system withstand component failures?
@@ -600,23 +602,25 @@ If your workloads have a requirement, implicit or explicit, for high availabilit
 time to recovery (MTTR), architect your workloads for resiliency and distribute your workloads
 to withstand outages.
 Best practices:
-• Monitoring is done at all layers of the workload to detect failures: Continuously monitor
+* Monitoring is done at all layers of the workload to detect failures: Continuously monitor
 the health of your system and report degradation as well as complete failure.
-• Deployed to multiple Availability Zones; Multiple AWS Regions if required: Distribute
+* Deployed to multiple Availability Zones; Multiple AWS Regions if required: Distribute
 workload load across multiple Availability Zones and AWS Regions (for example, DNS, ELB,
 Application Load Balancer, API Gateway).
-• Has loosely coupled dependencies: Dependencies such as queuing systems, streaming
+* Has loosely coupled dependencies: Dependencies such as queuing systems, streaming
 systems, workflows, and load balancers are loosely coupled.
-• Has implemented graceful degradation: When a component’s dependencies are
+* Has implemented graceful degradation: When a component’s dependencies are
 unhealthy, the component itself does not report as unhealthy. It can continue to serve
 requests in a degraded manner.
-• Automated healing implemented on all layers: Use automated capabilities upon
+* Automated healing implemented on all layers: Use automated capabilities upon
 detection of failure to perform an action to remediate.
-• Notifications are sent upon availability impacting events: Notifications are sent upon
+* Notifications are sent upon availability impacting events: Notifications are sent upon
 detection of any significant events, even if it was automatically healed.
-REL 8 How do you test resilience?
+
+**REL 8 How do you test resilience?**
 Test the resilience of your workload to help you find latent bugs that only surface in
 production. Exercise these tests regularly.
+
 Best practices:
 • Use a playbook: Have a playbook for failure scenarios that have not been anticipated.
 • Inject failures to test: Test failures regularly, ensuring coverage of failure pathways.
@@ -626,20 +630,22 @@ evaluate the architecture and identify the root cause. Have a method of communic
 these causes to others as needed.
 
 
-REL 9 How do you plan for disaster recovery?
+**REL 9 How do you plan for disaster recovery?**
+
 Data recovery (DR) is critical should restoration of data be required from backup methods. Your
 definition of and execution on the objectives, resources, locations, and functions of this data
 must align with RTO and RPO objectives.
+
 Best practices:
-• Recovery objectives are defined: Recovery time objective (RTO) and recovery point
+* Recovery objectives are defined: Recovery time objective (RTO) and recovery point
 objective (RPO) are defined.
-• Recovery strategy is defined: A disaster recovery (DR) strategy has been defined to meet
+* Recovery strategy is defined: A disaster recovery (DR) strategy has been defined to meet
 objectives.
-• Configuration drift is managed: Ensure that AMIs and the system configuration state are
+* Configuration drift is managed: Ensure that AMIs and the system configuration state are
 up-to-date at the DR site or region, as well as the limits on AWS services.
-• Test and validate disaster recovery implementation: Regularly test failover to DR to
+* Test and validate disaster recovery implementation: Regularly test failover to DR to
 ensure that RTO and RPO are met.
-• Recovery is automated: Use AWS or third-party tools to automate system recovery.
+* Recovery is automated: Use AWS or third-party tools to automate system recovery.
 
 ### 3.4 Performance Efficiency
 #### 3.4.1 Selection
