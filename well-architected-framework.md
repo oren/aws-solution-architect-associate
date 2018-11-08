@@ -8,8 +8,8 @@
 * On Architecture
 * General Design Principles
 
-2. [The Five Pillars of the Well-Architected Framework](##2.-The-Five-Pillars-of-the-Well-Architected Framework)
-*  Operational Excellence
+2. The Five Pillars of the Well-Architected Framework
+* [Operational Excellence][]
 * Security
 * Reliability
 * Performance Efficiency
