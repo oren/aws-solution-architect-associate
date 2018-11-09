@@ -47,6 +47,7 @@ Resources:
 ```
 
 <details><summary>output</summary>
+
 ```
 Resources:
   MyFirstBucketB8884501:
@@ -62,6 +63,7 @@ Resources:
         dk/aws-s3-notifications=0.15.2,@aws-cdk/cdk=0.15.2,@aws-cdk/cx-api=0.15\
         .2,cdk=1.0.0"
 ```
+
 </details>
 
 Deploy
