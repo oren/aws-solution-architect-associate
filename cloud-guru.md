@@ -1,6 +1,6 @@
 # Cloud Guru Course
 
-## AWS - 10,000 Foot Overview
+## 1. AWS - 10,000 Foot Overview
 
 * **Global Infrastructure:** Region (physical location with two or more AZs), AZ (data center), Edge location (endpoint for AWS for caching. Usually consist of CloudFront).
 * **Compute**: EC2, EC2 Container Service, Elastic Beanstalk, Lambda, Lightsale, Batch
@@ -26,14 +26,14 @@ Not in the exam:
 * **IoT**: iOT (), iOT Device Management (), Amazon FreeRTOS (OS for microcontroller), Greengrass (sofware that lets you run local compute messaging data caching sync and ML interface capabilities for connected devices in secure way).
 * **Game Development**: GameLift (help develop games).
 
-## Identity Access Management (IAM)
+## 2. Identity Access Management (IAM)
 
 * Users - people
 * Groups - collection of users
 * Roles - assign them to AWS resources
 * Policy - a document that defines at least one permission
 
-## AWS Object Storage and CDN - S3, Glacier and CloudFront
+## 3. AWS Object Storage and CDN - S3, Glacier and CloudFront
 
 **S3**
 
@@ -168,7 +168,7 @@ URL for website on S3: http://mycloudguru3.website.s3-website-us-east-1.amazonaw
 
 URL for bucket: https://s3-eu-west-1.amazonaws.com/acloudguru1234
 
-## EC2
+## 4. EC2
 
 1. On-demand - no commitment. unpredictable workloads, testing.
 1. Reserved Instance - 1 or 3 years. predictable usage. cheaper than on-demand.
@@ -208,7 +208,11 @@ EBS Volume Types:
 11. Cold HDD (CS1) - lowest cost storage for infrequently accessed workloads. usecase: file server. can't be a boot volume.
 11. Magnetic (standard) - legacy. lowest cost per gigabyte of all EBS volume types. infrequent access. Can be a boot volume.
 
-**EC2 Lab**
+### EC2 Lab
+* Termination protection is off by default. If it's on, your EC2 can't be terminated using the CLI or the API.
+* When terminating EC2, the EBS volume is also deleted. That's the default.
+* EBS Root Volumes of your default AMIs are not encrypted. You can do that using 3rd party tool or when creating AMI in the console or via the API.
+* Additional valumes can be encrypted.
 
 ### Security Groups Lab
 control traffic to EC2 instance. one instance can be behind multiple security groups.
@@ -242,10 +246,11 @@ Info
 * Volumes restored from encrypted snapshots are encypted automatically.
 * Sharing snapshot is possible only if they are unencrypted. They can be shared with other AWS accounts or made public.
 
-Volumes vs Snapshot lab
-* Create snapshot, copy it to different region and encrypt it. create image (AMI) from the EBS snapshot. 
+### Lab - Encrypt Root Device Volume and create an AMI
+* First you need to have EC2. Stop it and go to 'Volumes'. Create a snapshot from that EBS Volume.
+* Copy it to different region and encrypt it. create image (AMI) from the EBS snapshot. 
 
-Info
+What we learned
 * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
 * snapshots of encrypted valumes are encrypted automatically.
 * volumes restored from encrypted snapshots are encrypted automatically.
@@ -267,5 +272,17 @@ Summary:
 * You can reboot both without loosing data.
 * Both ROOT volumes will be deleted on termination but with EBS volumes you can tell AWS to keeyp the root device volume.
 
+### ELB
+* Types: Application, Network, and Classic
+* Application Load Balancer: OSI layer 7
+* Network Load Balancer: for performance, layer 4. million of RPS.
+* Classic: legacy. layer 7 features such as X-Forwarded and sticky sessions and also layer 4 for TCP apps.
+* 504 error - gateway timeout. if the app stopped responding, the ELB will send it. You need to scale the app out or up.
+* X-Forwarded - the public ip address of the client that calls you. the elb pass it to the ec2.
+
+#### ELB lab
+Creating Classic and Network ELB
+
+* ssh to our EC2,  
 
 
