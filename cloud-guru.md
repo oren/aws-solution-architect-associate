@@ -1,7 +1,6 @@
 # Cloud Guru Course
 
-Table of Contents
-=================
+## Table of Contents
 
 * [1\. AWS \- 10,000 Foot Overview](#1-aws---10000-foot-overview)
 * [2\. Identity Access Management (IAM)](#2-identity-access-management-iam)

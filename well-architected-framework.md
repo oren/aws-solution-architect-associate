@@ -42,28 +42,6 @@
       * [3\.5\.2 Matching supply and demand](#352-matching-supply-and-demand)
       * [3\.5\.3 Optimizing Over Time](#353-optimizing-over-time)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
-
-## Table of Contents
-1. Introduction
-* Definitions
-* On Architecture
-* General Design Principles
-
-2. The Five Pillars of the Well-Architected Framework
-* Operational Excellence
-* Security
-* Reliability
-* Performance Efficiency
-* Cost Optimization
-
-3. Appendix: Well-Architected Questions, Answers, and Best Practices
-* Operational Excellence
-* Security
-* Reliability
-* Performance Efficiency
-* Cost Optimization
-
 ## 1. Introduction
 ### 1.1 Definitions
 * Five pillars: OE, Security, Reliability, Performance Efficiency, Cost Optimization.
