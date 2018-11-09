@@ -3,6 +3,7 @@
 * Fill-in the config and credentials files based on your user:
 
 <details><summary>details</summary>
+
 ```
 cat ~/.aws/config
 [default]
