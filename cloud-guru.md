@@ -250,11 +250,22 @@ Info
 * snapshots of encrypted valumes are encrypted automatically.
 * volumes restored from encrypted snapshots are encrypted automatically.
 
-### AMIs -EBS Root Device Volumes vs Instance Store
+### AMI Types: EBS Root Device Volumes vs Instance Store
+Background information:
+* AMI is the template. From AMI you launch an EC2 instance.
+* Root Device is the storage that the OS is installed on. Similar to partition on my laptop where my OS is installed.
+* There are two types of storage for the root device: EBS and Instance Store.
+* Instance Store is the old type, EBS introduced later.
+* EC2 runs on a phisical machine. This host runs a hypervisor below all the EC2s on that machine. hypervisor fails sometime and you'll have to stop and start the EC2 to solve this issue. Stoping and restarting will provision your EC2 on a different host.
+
+Summary:
+* All AMIs are categorized as either backed by Amazon EBS or Instance Store.
+* EBS volume are created from an Amazon EBS snapshot.
+* Instance Store volume are created from a template stored in Amazon S3. It takes more time to provision than EBS.
+* Instance Store is ephemeral - you can't stop it and start it so it's less durable the EBS. If the host fails, you lose data.
+* EBS backed instances can be stopped and you don't lose data if they are stopped.
+* You can reboot both without loosing data.
+* Both ROOT volumes will be deleted on termination but with EBS volumes you can tell AWS to keeyp the root device volume.
 
 
-
-
-
- 
 
