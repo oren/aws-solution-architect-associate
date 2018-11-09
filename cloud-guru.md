@@ -3,18 +3,17 @@
 Table of Contents
 =================
 
-* [Cloud Guru Course](#cloud-guru-course)
-  * [1\. AWS \- 10,000 Foot Overview](#1-aws---10000-foot-overview)
-  * [2\. Identity Access Management (IAM)](#2-identity-access-management-iam)
-  * [3\. AWS Object Storage and CDN \- S3, Glacier and CloudFront](#3-aws-object-storage-and-cdn---s3-glacier-and-cloudfront)
-  * [4\. EC2](#4-ec2)
-    * [EC2 Lab](#ec2-lab)
-    * [Security Groups Lab](#security-groups-lab)
-    * [Snapshots](#snapshots)
-    * [Lab \- Encrypt Root Device Volume and create an AMI](#lab---encrypt-root-device-volume-and-create-an-ami)
-    * [AMI Types: EBS Root Device Volumes vs Instance Store](#ami-types-ebs-root-device-volumes-vs-instance-store)
-    * [ELB](#elb)
-      * [ELB lab](#elb-lab)
+* [1\. AWS \- 10,000 Foot Overview](#1-aws---10000-foot-overview)
+* [2\. Identity Access Management (IAM)](#2-identity-access-management-iam)
+* [3\. AWS Object Storage and CDN \- S3, Glacier and CloudFront](#3-aws-object-storage-and-cdn---s3-glacier-and-cloudfront)
+* [4\. EC2](#4-ec2)
+  * [EC2 Lab](#ec2-lab)
+  * [Security Groups Lab](#security-groups-lab)
+  * [Snapshots](#snapshots)
+  * [Lab \- Encrypt Root Device Volume and create an AMI](#lab---encrypt-root-device-volume-and-create-an-ami)
+  * [AMI Types: EBS Root Device Volumes vs Instance Store](#ami-types-ebs-root-device-volumes-vs-instance-store)
+  * [ELB](#elb)
+    * [ELB lab](#elb-lab)
 
 ## 1. AWS - 10,000 Foot Overview
 
