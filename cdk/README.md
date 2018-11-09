@@ -1,7 +1,8 @@
-Setup AWS account
+## Setup AWS account
 * Create user and a group. Give the group AdministratorAccess and add it to the user.
 * Fill-in the config and credentials files based on your user:
 
+<details><summary>details</summary>
 ```
 cat ~/.aws/config
 [default]
@@ -13,21 +14,24 @@ aws_access_key_id = xxxxxxxxxxxxxxxxxxxx
 aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Install CDK and TypeScript
+</details>
+
+## Install CDK and TypeScript
 ```
 sudo npm install aws-cdk
 cdk --version
 sudo npm install -g typescript
 ```
 
-Build CloudFormation
+## Build CloudFormation
 ```
 npm run build
 or
 npm run watch (to continuously build)
 ```
 
-Synth (print out the CloudFormation that will run against your AWS account)
+## Synth 
+(print out the CloudFormation that will run against your AWS account)
 ```
 cdk synth
 ```
@@ -52,7 +56,7 @@ Resources:
 
 </details>
 
-Deploy
+## Deploy
 ```
 cdk deploy
 ```
