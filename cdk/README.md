@@ -46,6 +46,24 @@ Resources:
         .2,cdk=1.0.0"
 ```
 
+<details><summary>output</summary>
+```
+Resources:
+  MyFirstBucketB8884501:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: "@aws-cdk/aws-codepipeline-api=0.15.2,@aws-cdk/aws-events=0.15.2,@aws-c\
+        dk/aws-iam=0.15.2,@aws-cdk/aws-kms=0.15.2,@aws-cdk/aws-s3=0.15.2,@aws-c\
+        dk/aws-s3-notifications=0.15.2,@aws-cdk/cdk=0.15.2,@aws-cdk/cx-api=0.15\
+        .2,cdk=1.0.0"
+```
+</details>
+
 Deploy
 ```
 cdk deploy
