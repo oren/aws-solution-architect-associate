@@ -27,7 +27,7 @@ or
 npm run watch (to continuously build)
 ```
 
-Synth
+Synth (print out the CloudFormation that will run against your AWS account)
 ```
 cdk synth
 
