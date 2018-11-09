@@ -210,6 +210,50 @@ EBS Volume Types:
 
 **EC2 Lab**
 
+### Security Groups Lab
+control traffic to EC2 instance. one instance can be behind multiple security groups.
+
+Info about SGs:
+* Inbound traffic is blocked by defualt
+* Outbound traffic is allowed
+* Changes are immediate
+* A security group can apply to many EC2s
+* EC2 can have multiple SGs
+* SG are stateful - by adding inbound rule, an implicit outbound rule is being added (unlike network access control list)
+* You can't block specific IP address. Use Network Access Control List instead.
+* You can specify allow rules but not deny rules
+
+Lab
+* Create EC2 and Security Group. ports 80, 22, and 443 from anywhere or from your ip.
+
+### Snapshots 
+EBS Lab
+* Create EC2, add 4 drives to it.
+* Create a snapshot, put it in a different AZ (or region), and attach a volume to it.
+
+Info
+* EC2 should be located at the same AZ as the EBS.
+* Snapshot live on S3. only the delta of tha changes are saved.
+* If the EBS volume serve as root devices, you have to stop the instance before taking a snapshot.
+* It's possible to change size and storage type of EBS.
+* Volumes will always be in the same AZ as the EC2.
+* To move EC2 volume from AZ/Region to another, take a snapshot and copy to the new AZ/region.
+* Snapshots of encrypted valumes are encrypted.
+* Volumes restored from encrypted snapshots are encypted automatically.
+* Sharing snapshot is possible only if they are unencrypted. They can be shared with other AWS accounts or made public.
+
+Volumes vs Snapshot lab
+* Create snapshot, copy it to different region and encrypt it. create image (AMI) from the EBS snapshot. 
+
+Info
+* To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
+* snapshots of encrypted valumes are encrypted automatically.
+* volumes restored from encrypted snapshots are encrypted automatically.
+
+### AMIs -EBS Root Device Volumes vs Instance Store
+
+
+
 
 
  
