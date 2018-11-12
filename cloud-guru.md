@@ -223,6 +223,11 @@ EBS Volume Types:
 11. Magnetic (standard) - legacy. lowest cost per gigabyte of all EBS volume types. infrequent access. Can be a boot volume.
 
 ### EC2 Lab
+Create a simple website on EC2:
+* Create new EC2, download pem file, chmod 400 test.pem and ssh ec2-user@public-ip -i test.pem
+* Add inbound rule on the security group - allow http traffic on port 80 from anywhere
+* (on the ec2) sudo su && yum update -y && yum install httpd && cd /var/www/html && vim index.html && service httpd start
+* Go to the public ip from the browser. You should see the content of the html file.
 * Termination protection is off by default. If it's on, your EC2 can't be terminated using the CLI or the API.
 * When terminating EC2, the EBS volume is also deleted. That's the default.
 * EBS Root Volumes of your default AMIs are not encrypted. You can do that using 3rd party tool or when creating AMI in the console or via the API.
