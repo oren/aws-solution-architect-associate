@@ -228,6 +228,8 @@ Create a simple website on EC2:
 * Add inbound rule on the security group - allow http traffic on port 80 from anywhere
 * (on the ec2) sudo su && yum update -y && yum install httpd && cd /var/www/html && vim index.html && service httpd start
 * Go to the public ip from the browser. You should see the content of the html file.
+
+Info:
 * Termination protection is off by default. If it's on, your EC2 can't be terminated using the CLI or the API.
 * When terminating EC2, the EBS volume is also deleted. That's the default.
 * EBS Root Volumes of your default AMIs are not encrypted. You can do that using 3rd party tool or when creating AMI in the console or via the API.
