@@ -299,11 +299,23 @@ Summary:
 * Network Load Balancer: for performance, layer 4. million of RPS.
 * Classic: legacy. layer 7 features such as X-Forwarded and sticky sessions and also layer 4 for TCP apps.
 * 504 error - gateway timeout. if the app stopped responding, the ELB will send it. You need to scale the app out or up.
-* X-Forwarded - the public ip address of the client that calls you. the elb pass it to the ec2.
+* X-Forwarded - the public ip address (IPv4) of the client that calls you. the elb pass it to the ec2.
+* EC2 monitored by ELB can be InService or OutofService
+* Load Balancers have DNS name. You are never given an IP address since it might change.
 
 #### ELB lab
-Creating Classic and Network ELB
+Create Classic Loab Balancer (ELB):
+* ssh to our EC2, create index.html and healthcheck.html
+* create classic load balancer. put healthcheck.html as 'ping path'.
+* simulate failure by deleting the healthcheck.html file. add the file and notice that the status of the instance is 'healthy'.
+* ELB will stop sending traffic to the instance if the healthcheck failed.
+* Copy paste the ELB URL to the browser and you should see the index.html.
 
-* ssh to our EC2,  
+Create Application Load Balancer:
+* Create it. set the healthcheck.html as before.
+* Asign it to the ec2.
+* Access the URL
 
+### CloudWatch Lab
+* create dashboard, widgets, cloudwatch events, logs, and other alarms like CPU utilization
 
