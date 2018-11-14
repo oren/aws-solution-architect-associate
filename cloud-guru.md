@@ -318,4 +318,19 @@ Create Application Load Balancer:
 
 ### CloudWatch Lab
 * create dashboard, widgets, cloudwatch events, logs, and other alarms like CPU utilization
+* Alarms - notify if a threshold are hit. For example if CPU above 80% - send email
+* Events - do something if a resoure was modified. for example - call lambda when EC2 instance is available.
+* Log - aggregate, monitor, and store logs. application level using an agent that is installed on the EC2 (app, apache or kernel logs)
+
+Exam tips:
+* Standard monitoring = 5 min. Detailed monitoring = 1 min
+* CloudWatch provide the following metrics for EC2 by default: CPU, Disk, Network, Status - machine and hypervisor. Memory can be done with custom metric..
+
+### AWS CLI and EC2
+* create EC2 and download the pem file, create user and attach existing policy - AdministratorAccess. write down the access key id and secret access key.
+* ssh ec2-user@ip -i file.pem
+* aws configure && aws s3 ls
+
+### IAM - Roles Lab
+
 
