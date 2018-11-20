@@ -6,7 +6,7 @@ class MyStack extends cdk.Stack {
         super(parent, id, props);
 
 	new s3.Bucket(this, 'MyFirstBucket', {
-          versioned: true
+          versioned: false
         });
     }
 }
