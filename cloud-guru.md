@@ -34,7 +34,7 @@ Not in the exam:
 * **ML**: SageMaker (deep learning), Comprehend (sentiment analysis), DeepLens (AI-aware camera. Detect people. Stays on the device), Lex (audio to text), Machine Learning (through a dataset, get results, and predict the outcome), Polly (text to speech), Rekognition (what's in a file or video), Amazon Translate (text translation), Amazon Transcribe (speech to text).
 * **Media Services**: Elastic Transcoder (resize video to fit in different devices), MediaConvert (create video for different devices), MediaLive (create video streams to different devices), MediaPackage (prepare and protect your videos for delivery), MediaStore (storage service for media. Uses for live and on demand content), MediaTailor (targeted ads into video streams).
 * **AR/VR**: Sumerian (create AR/VR).
-* **Mobile Service**: Mobile Hub (use AWS mobile SDK to access AWS), Pinpoint (push notifications), AWS AppSync (update data for offline data and more...), Device Farm (test app on real device), Mobile Analytics. 
+* **Mobile Service**: Mobile Hub (use AWS mobile SDK to access AWS), Pinpoint (push notifications), AWS AppSync (update data for offline data and more...), Device Farm (test app on real device), Mobile Analytics.
 * **Customer Engagement**: Connect (contact center as a service), Simple Email Service.  The last one might come up in the exam.
 * **Business Productivity**: Alexa For Business (dial into a meeting room, inform IT that the printer is broken etc), Amazon Chime (text/video conference), WorkDocs (dropbox-like), WorkMail (office-365 like).  WorkDocs might come up.
 * **IoT**: iOT (), iOT Device Management (), Amazon FreeRTOS (OS for microcontroller), Greengrass (sofware that lets you run local compute messaging data caching sync and ML interface capabilities for connected devices in secure way).
@@ -251,7 +251,7 @@ Info about SGs:
 Lab
 * Create EC2 and Security Group. ports 80, 22, and 443 from anywhere or from your ip.
 
-### Snapshots 
+### Snapshots
 EBS Lab
 * Create EC2, add 4 drives to it.
 * Create a snapshot, put it in a different AZ (or region), and attach a volume to it.
@@ -269,7 +269,7 @@ Info
 
 ### Lab - Encrypt Root Device Volume and create an AMI
 * First you need to have EC2. Stop it and go to 'Volumes'. Create a snapshot from that EBS Volume.
-* Copy it to different region and encrypt it. create image (AMI) from the EBS snapshot. 
+* Copy it to different region and encrypt it. create image (AMI) from the EBS snapshot.
 
 What we learned
 * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
@@ -332,5 +332,27 @@ Exam tips:
 * aws configure && aws s3 ls
 
 ### IAM - Roles Lab
+* Create EC2 and add role that allow it to access S3. You can add the role first or after and attach it during or after the creation of the ec2.
+* SSH into it: ssh ec2-user@public-ip -i key.pem
+* sudo su && aws s3 ls => list of my s3 buckets. I am able to see the s3 buckets thanks to the role we attached to that instance! I don't have to store the credentials of this IAM user on the EC2 anymore!
 
+### S3 CLI & Regions
+* Create EC2, play with S3 CLI and use S3 on different regions
+
+### Bash Scripting Lab
+In this lab we will run a script when EC2 starts. It will pull an index.thml file into our httpd service and run the service.
+
+* Create bucket, and role with s3 full access. put html file on that bucket. create EC2 and attach the role.
+* Under Configure Instance add bash script when creating the EC2:
+
+  #!/bin/bash
+  yum update -f yum
+  install httpd -y
+  service httpd start
+  chkconfig httpd on
+  aws s3 cp s3://oren-website/index.html /var/www/html
+
+* allow ssh and port 80 to the world.
+
+### Instance Metadata
 
