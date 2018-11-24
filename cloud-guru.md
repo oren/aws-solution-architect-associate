@@ -355,4 +355,8 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
 * allow ssh and port 80 to the world.
 
 ### Instance Metadata
+* Create EC2 and role with S3AdminAccess and attach that role to the EC2. SSH to the EC2.
+* curl http://169.254.169.254/latest/meta-data/ # returns a bunchof metadata
+* curl http://169.254.169.254/latest/meta-data/public-ipv4  # returns the public ip
 
+### Launch Configuration & auto scaling groups
