@@ -1,4 +1,4 @@
-## 1. Setup AWS account
+# 1. Setup AWS account
 * Create user and a group. Give the group AdministratorAccess and add it to the user.
 * Fill-in the config and credentials files based on your user:
 
