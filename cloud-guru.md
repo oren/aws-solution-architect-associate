@@ -356,3 +356,4 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
 
 ### Instance Metadata
 
+
