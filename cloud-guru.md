@@ -348,7 +348,7 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
   #!/bin/bash
   yum install httpd -y
   yum update -y
-  aws s3 cp s3://oren-website/index.html /var/www/html
+  aws s3 cp s3://oren-website /var/www/html/ --recursive
   service httpd start
   chkconfig httpd on
 
@@ -361,8 +361,25 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
 
 ### Launch Configuration & auto scaling groups
 * Create S3 bucket. Add index.html and healcheck.html to this bucket.
-* Create a role that allows EC2 AmazonS3FullAccess
+* Create a role that allows EC2 AmazonS3FullAccess. This is needed to the EC2 can copy the html files from S3.
 * Create classic load balancer
 * Create launch configuration. Asign it the role you created above.
-* Create Autoscaling group
+* in 'User Data', add the bash script we created in the bash scripting lab.
+* Create Auto scaling group: Group size:3, 3 subnets, Check 'receive traffic from load balancers', pick the LB from the list, Health Check Type: ELB, Health Check Grace Period: 150 secs
+* You can add and remove instances based on high CPU etc
 
+So we have 3 ec2s, each one on a different AZ and subnet. If they die, the auto scaling will bring EC2 instead.
+The ELB uses the health check to remove EC2s. You can lose 2 out of 3 AZ and still be up and running.
+
+
+### EC2 Placement Groups
+Two types:
+1. Clustered - EC2 in the same AZ. Good for big data - low latency or high throughput. Not every instance is supported.
+1. Spread - each EC2 is on a dedicated hardware and separate AZs.
+
+Info:
+* AWS recommend homogenous instances within a group.
+* You can't merge groups.
+* You can't move an existing instance into a group. You can create an AMI from an existing instance, and then launch a new instance from the AMI into a group.
+
+## EFS - Elastic File System
