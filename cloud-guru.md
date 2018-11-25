@@ -403,6 +403,17 @@ Info:
 * The files you create in one EC2 replicate itself the others.
 
 ### Lambda
+Evolution of compute
+1. Data Center
+1. IAAS - EC2
+1. PAAS - Elastic Beanstalk. Amazon create the webserver for you.
+1. Containers
+1. Serverless
+
+Lambda Triggers: API Gateway, IoT, Alexa Skill, Alexa Smart Home, CloudFront, CloudWatch Events, CloudWatch Logs, CodeCommit, Cognito Sync Trigger, DynamoDB, Kinesis, S3, SNS.
+Languages: Node.js, Java, Python, C#, Go
+Price: first 1 m requests are free. Later - $0.20 per 1 million requests.
+Duration: max 15 minutes
 
 ### Build A Serverless Webpage
 
