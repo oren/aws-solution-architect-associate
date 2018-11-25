@@ -415,6 +415,11 @@ Languages: Node.js, Java, Python, C#, Go
 Price: first 1 m requests are free. Later - $0.20 per 1 million requests.
 Duration: max 15 minutes
 
-### Build A Serverless Webpage
+### Build A Serverless Webpage With API Gateway and Lambda
+What we will build: the user will hit a URL, html page will be returned from S3. User hit a button. Button calls Lambda that return a string.
+* Create Lambda that returns a hardcoded string
+* Create S3 and add error.html and index.html with javasrcript code that makes a get call to our Lambda URL.
+* Make the two files public
+* Go to the URL of the website and hit the button.
 
 
