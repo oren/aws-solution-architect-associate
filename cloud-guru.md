@@ -346,18 +346,23 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
 * Under Configure Instance add bash script when creating the EC2:
 
   #!/bin/bash
+  yum install httpd -y
   yum update -f yum
-  install httpd -y
+  aws s3 cp s3://oren-website/index.html /var/www/html
   service httpd start
   chkconfig httpd on
-  aws s3 cp s3://oren-website/index.html /var/www/html
 
 * allow ssh and port 80 to the world.
 
 ### Instance Metadata
-* Create EC2 and role with S3AdminAccess and attach that role to the EC2. SSH to the EC2.
+* Create EC2 and role with S3AdminAccess for EC2s and attach that role to the EC2. SSH to the EC2.
 * curl http://169.254.169.254/latest/meta-data/ # returns a bunchof metadata
 * curl http://169.254.169.254/latest/meta-data/public-ipv4  # returns the public ip
 
 ### Launch Configuration & auto scaling groups
+* Create S3 bucket. Add index.html and healcheck.html to this bucket.
+* Create a role that allows EC2 AmazonS3FullAccess
+* Create classic load balancer
+* Create launch configuration. Asign it the role you created above.
+* Create Autoscaling group
 
