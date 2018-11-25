@@ -382,4 +382,4 @@ Info:
 * You can't merge groups.
 * You can't move an existing instance into a group. You can create an AMI from an existing instance, and then launch a new instance from the AMI into a group.
 
-## EFS - Elastic File System
+### EFS - Elastic File System
