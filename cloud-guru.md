@@ -347,7 +347,7 @@ In this lab we will run a script when EC2 starts. It will pull an index.thml fil
 
   #!/bin/bash
   yum install httpd -y
-  yum update -f yum
+  yum update -y
   aws s3 cp s3://oren-website/index.html /var/www/html
   service httpd start
   chkconfig httpd on
