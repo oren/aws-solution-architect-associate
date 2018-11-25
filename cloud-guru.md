@@ -383,8 +383,27 @@ Info:
 * You can't move an existing instance into a group. You can create an AMI from an existing instance, and then launch a new instance from the AMI into a group.
 
 ### EFS - Elastic File System
+* What it is? file storage for EC2 that unlike EBS can grow as you need and span multiple EC2s on different AZs. EBS can only be mount to a single EC2.
+* Use-case: file server - multiple EC2s can use the same EFS volume. You can also apply file and directory level permissions.
+* Block based storage (unlike S3)
+* Read after write consistency
+* NPSv4
+* Only pay when you use
+* Scale to petabytes
+* Thousands of concurrent NFS connections
+* Data is stored across multi AZ's within a region
+
+### EFS Lab
+* Click EFS (Under storage). Create fle system that access 3 AZs.
+* Provision 3 EC2s in each AZ (subnet dropbox).
+* Provision a Load Balancer and add the 3 EC2 instances.
+* SSH to all the EC2 instances.
+* Install apache on both and start it.
+* Run a mount command that mount the EFS into /var/www/html/
+* The files you create in one EC2 replicate itself the others.
 
 ### Lambda
 
 ### Build A Serverless Webpage
+
 
