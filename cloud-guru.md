@@ -874,111 +874,63 @@ You can control whether an EBS root volume is deleted when its associated instan
 ### DDatabases Summary
 ### DDatabases Quiz
 
-VPC 01:31:08
-13:51
-Introduction and Overview
-18:03
-Build Your Own Custom VPC
-05:27
-Build A Custom VPC - Part 2
-13:44
-Network Address Translation (NAT)
-12:49 2 months ago updated
-Access Control Lists (ACLs)
-02:19
-Custom VPCs and ELBs
-04:28
-VPC Flow Logs
-03:57
-NATs vs Bastions
-06:50
-VPC End Points
-03:30
-VPC Clean Up
-06:10
-Summary
-VPC Quiz
-Chapter 9
-Application Services 01:00:41
-12:49
-SQS
-08:18
-SWF
-05:38
-SNS
-02:01
-Elastic Transcoder
-06:34
-API Gateway
-09:25
-Kinesis 101
-05:54
-Kinesis Lab
-10:02
-Application Services Summary
-Application Services Quiz
-Chapter 10
-The Real World - Creating a fault tolerant Word Press Site 01:05:24
-13:33
-Getting Setup
-19:41
-Setting Up EC2
-19:20
-AutoScaling
-10:52 2 months ago updated
-CloudFormation!
-01:58
-Want To Be A Real Solutions Architect? You Need To Know CloudFormation!
-Chapter 11
-Whitepapers & The Well Architected Framework 01:46:00
-02:16
-What Else Do I Need To Know?
-12:28
-Architecting for the AWS Cloud: Best Practices
-06:19
-Introduction To The Well Architected Framework
-18:14
-Security
-10:50
-Reliability
-18:24
-Performance Efficiency
-14:32
-Cost Optimization
-14:02
-Operational Excellence
-08:55
-Summary
-Chapter 12
-Additional Exam Tips 01:44:24
-10:51
+## VPC
+### DIntroduction and Overview
+### DBuild Your Own Custom VPC
+### DBuild A Custom VPC - Part 2
+### DNetwork Address Translation (NAT)
+### DAccess Control Lists (ACLs)
+### DCustom VPCs and ELBs
+### DVPC Flow Logs
+### DNATs vs Bastions
+### DVPC End Points
+### DVPC Clean Up
+### DSummary
+### DVPC Quiz
+
+## Application Services
+### DSQS
+### DSWF
+### DSNS
+### DElastic Transcoder
+### DAPI Gateway
+### DKinesis 101
+### DKinesis Lab
+### DApplication Services Summary
+### DApplication Services Quiz
+
+## The Real World - Creating a fault tolerant Word Press Site
+### DGetting Setup
+### DSetting Up EC2
+### DAutoScaling
+### DCloudFormation!
+### DWant To Be A Real Solutions Architect? You Need To Know CloudFormation!
+
+## Whitepapers & The Well Architected Framework
+### DWhat Else Do I Need To Know?
+### DArchitecting for the AWS Cloud: Best Practices
+### DIntroduction To The Well Architected Framework
+### DSecurity
+### DReliability
+### DPerformance Efficiency
+### DCost Optimization
+### DOperational Excellence
+### DSummary
+
+Additional Exam Tips
 Exam Tips Based On Student Feedback
-07:53
 Consolidated Billing
-11:40 2 months ago updated
 AWS Organizations Lab
-14:19
 Cross Account Access
-11:50 2 months ago updated
 Resource Groups & Tagging
-04:23
 VPC Peering
-05:01
 Direct Connect
-08:07
 Security Token Service
-03:15
 Active Directory Integration
-03:07
 Workspaces
-12:21
 ECS - Part 1 - What is Docker
-11:37
 ECS - Part 2 - What is ECS?
-Chapter 13
-Thank You, Good Luck & Coming Soon 05:52
-05:52
-Thank You To All My Students
-Scenario Quiz
-Mini Exam
-Final Practice Exam
+
+### Scenario Quiz
+### Mini Exam
+### Final Practice Exam
