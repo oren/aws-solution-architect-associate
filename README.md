@@ -7,3 +7,7 @@ I am summerizing all my learnings for AWS Solution Architect Associate Certifica
 * [Ric McLaughlin's website](http://ric.mclaughlin.today/portfolio)
 
 
+## Generating Table of Content
+https://github.com/ekalinin/github-markdown-toc
+
+./gh-md-toc README.md

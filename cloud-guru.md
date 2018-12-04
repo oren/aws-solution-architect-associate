@@ -725,3 +725,5 @@ document.getElementById("postText").onkeyup = function(){
 
 * Upload index.html, style.css, and scripts.js and open the URL of the S3 bucket.
 * enjoy!
+
+### EC2 Exam Tips
