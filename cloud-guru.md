@@ -842,94 +842,100 @@ You can control whether an EBS root volume is deleted when its associated instan
 ## Route53
 
 ### DNS 101
+* ELBs do not have pre-defined IPv4 addresses. You resolve to them using a DNS name.
+* CNAME - resolve one domain name to another. point mobile.foo.com to m.foo.com. Can't be used for naked domain names (foo.com).
+* Alias Record - m.foo.com or foo.com
+* If you can chose, use Alias record over a CNAME.
+
+SOA Records:
 
 ### Route 53 Register A Domain Name Lab
 
-### RRouting Types Of DNS Available With Route53
+### Routing Types Of DNS Available With Route53
 
-### RSimple Routing Policy Lab
+### Simple Routing Policy Lab
 
-### RWeighted Routing Policy Lab
+### Weighted Routing Policy Lab
 
-### RLatency Routing Policy Lab
+### Latency Routing Policy Lab
 
-### RFailover Routing Policy Lab
+### Failover Routing Policy Lab
 
-### RGeolocation Routing Policy Lab
+### Geolocation Routing Policy Lab
 
-### RMultivalue Answer Routing
+### Multivalue Answer Routing
 
-### RDNS Exam Tips
+### DNS Exam Tips
 
-### RRoute53 Quiz
+### Route53 Quiz
 
 ## Databases on AWS
 ### Databases 101
-### DLab: Create our first RDS Instance
-### DRDS - Back Ups, Multi-AZ & Read Replicas
-### DDynamoDB
-### DRedShift
-### DElasticache
-### DAurora
-### DDatabases Summary
-### DDatabases Quiz
+### Lab: Create our first RDS Instance
+### RDS - Back Ups, Multi-AZ & Read Replicas
+### DynamoDB
+### RedShift
+### Elasticache
+### Aurora
+### Databases Summary
+### Databases Quiz
 
 ## VPC
 ### DIntroduction and Overview
-### DBuild Your Own Custom VPC
+### Build Your Own Custom VPC
 ### DBuild A Custom VPC - Part 2
-### DNetwork Address Translation (NAT)
-### DAccess Control Lists (ACLs)
-### DCustom VPCs and ELBs
-### DVPC Flow Logs
-### DNATs vs Bastions
-### DVPC End Points
-### DVPC Clean Up
-### DSummary
-### DVPC Quiz
+### Network Address Translation (NAT)
+### Access Control Lists (ACLs)
+### Custom VPCs and ELBs
+### VPC Flow Logs
+### NATs vs Bastions
+### VPC End Points
+### VPC Clean Up
+### Summary
+### VPC Quiz
 
 ## Application Services
-### DSQS
-### DSWF
-### DSNS
-### DElastic Transcoder
-### DAPI Gateway
-### DKinesis 101
-### DKinesis Lab
-### DApplication Services Summary
-### DApplication Services Quiz
+### SQS
+### SWF
+### SNS
+### Elastic Transcoder
+### API Gateway
+### Kinesis 101
+### Kinesis Lab
+### Application Services Summary
+### Application Services Quiz
 
 ## The Real World - Creating a fault tolerant Word Press Site
-### DGetting Setup
-### DSetting Up EC2
-### DAutoScaling
-### DCloudFormation!
-### DWant To Be A Real Solutions Architect? You Need To Know CloudFormation!
+### Getting Setup
+### Setting Up EC2
+### AutoScaling
+### CloudFormation!
+### Want To Be A Real Solutions Architect? You Need To Know CloudFormation!
 
 ## Whitepapers & The Well Architected Framework
-### DWhat Else Do I Need To Know?
-### DArchitecting for the AWS Cloud: Best Practices
-### DIntroduction To The Well Architected Framework
-### DSecurity
+### What Else Do I Need To Know?
+### Architecting for the AWS Cloud: Best Practices
+### Introduction To The Well Architected Framework
+### ecurity
 ### DReliability
-### DPerformance Efficiency
-### DCost Optimization
-### DOperational Excellence
-### DSummary
+### erformance Efficiency
+### Cost Optimization
+### Operational Excellence
+### Summary
 
-Additional Exam Tips
-Exam Tips Based On Student Feedback
-Consolidated Billing
-AWS Organizations Lab
-Cross Account Access
-Resource Groups & Tagging
-VPC Peering
-Direct Connect
-Security Token Service
-Active Directory Integration
-Workspaces
-ECS - Part 1 - What is Docker
-ECS - Part 2 - What is ECS?
+## Additional Exam Tips
+### Exam Tips Based On Student Feedback
+### Consolidated Billing
+### AWS Organizations Lab
+### Cross Account Access
+### Resource Groups & Tagging
+### VPC Peering
+### Direct Connect
+### Security Token Service
+### Active Directory Integration
+### Workspaces
+### ECS - Part 1 - What is Docker
+### ECS - Part 2 - What is ECS?
 
 ### Scenario Quiz
 ### Mini Exam
