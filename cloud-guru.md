@@ -212,15 +212,19 @@ F - FPGA, I - IOPS, G - Graphics, H - High Disk Throughput, T - cheap general pu
 
 EBS - elastic block storage
 
-EBS Volume Types:
+**EBS Volume Types:**
 
-1. SSD
-11. General Purpose SSD (GP2) - balance price and performance. ratio of 3IOPS per GB with up to 10,000 IOPS and ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 GiB and above.
-11. Provisioned IOPS SSD (IO1) - designed for i/o intensive apps such as large relational or NoSQL dbs. use it if you need more than 10,000 IOPS. Can provision up ot 20,000 IOPS per volume.
-1. Magnetic
-11. Throughput Optimized HDD (ST1) -low cost HDD volume. designed for frequently accessed, throughput-intensive workloads - Big data, data warehouse, log processing. can't be a boot volume.
-11. Cold HDD (CS1) - lowest cost storage for infrequently accessed workloads. usecase: file server. can't be a boot volume.
-11. Magnetic (standard) - legacy. lowest cost per gigabyte of all EBS volume types. infrequent access. Can be a boot volume.
+SSD:
+1. General Purpose SSD (GP2) - balance price and performance. ratio of 3IOPS per GB with up to 10,000 IOPS and ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 GiB and above.
+1. Provisioned IOPS SSD (IO1) - designed for i/o intensive apps such as large relational or NoSQL dbs. use it if you need more than 10,000 IOPS. Can provision up ot 20,000 IOPS per volume.
+
+Magnetic:
+1. Throughput Optimized HDD (ST1) -low cost HDD volume. designed for frequently accessed, throughput-intensive workloads - Big data, data warehouse, log processing. can't be a boot volume.
+1. Cold HDD (CS1) - lowest cost storage for infrequently accessed workloads. usecase: file server. can't be a boot volume.
+1. Magnetic (standard) - legacy. lowest cost per gigabyte of all EBS volume types. infrequent access. Can be a boot volume.
+
+More info:
+You can't mount 1 EBS volume to multiple EC2s. Use EFS instead. Or use S3 and attach a role to your EC2s so they can all access that bucket.
 
 ### EC2 Lab
 Create a simple website on EC2:
@@ -251,14 +255,17 @@ Info about SGs:
 Lab
 * Create EC2 and Security Group. ports 80, 22, and 443 from anywhere or from your ip.
 
-### Snapshots
+### Snapshots and Volumes
+* Creating a snapshot is done on a volume and store that volume on S3.
+* Volume exist on EBS - virtual hard disk. Snapshot exist on S3.
+
 EBS Lab
 * Create EC2, add 4 drives to it.
 * Create a snapshot, put it in a different AZ (or region), and attach a volume to it.
 
 Info
 * EC2 should be located at the same AZ as the EBS.
-* Snapshot live on S3. only the delta of tha changes are saved.
+* Snapshot live on S3. only the delta of the changes are saved.
 * If the EBS volume serve as root devices, you have to stop the instance before taking a snapshot.
 * It's possible to change size and storage type of EBS.
 * Volumes will always be in the same AZ as the EC2.
@@ -276,9 +283,12 @@ What we learned
 * snapshots of encrypted valumes are encrypted automatically.
 * volumes restored from encrypted snapshots are encrypted automatically.
 
-### AMI Types: EBS Root Device Volumes vs Instance Store
-Background information:
+### Amazon Machine Images (AMI)
 * AMI is the template. From AMI you launch an EC2 instance.
+* AMIs are regional. You can only launch an AMI from hte region in which it is stored. However you can copy AMIs to other regions using the console, command line, or the Amazon C2 API.
+
+#### AMI Types: EBS Root Device Volumes vs Instance Store
+Background information:
 * Root Device is the storage that the OS is installed on. Similar to partition on my laptop where my OS is installed.
 * There are two types of storage for the root device: EBS and Instance Store.
 * Instance Store is the old type, EBS introduced later.
@@ -292,6 +302,12 @@ Summary:
 * EBS backed instances can be stopped and you don't lose data if they are stopped.
 * You can reboot both without loosing data.
 * Both ROOT volumes will be deleted on termination but with EBS volumes you can tell AWS to keeyp the root device volume.
+
+**How can I take a snapshot of a RAID Array?**
+* Problem: take a snapshot, the snapshot excludes data held in the cache by applications and the OS. This tends not to matter on a single volume. However, using multiple volumes in a RAID array, this can be a problem due to interdependencies of the array.
+Since some data is in memory (cached by the OS or the app).
+* Solution: take an application consistent snapshot: stop the app from writing to disk, flush all caches to disk, and take the snapshot.
+* How: freeze the file system, unmount the RAID Array, shut down the EC2 instance.
 
 ### ELB
 * Types: Application, Network, and Classic
@@ -316,11 +332,11 @@ Create Application Load Balancer:
 * Asign it to the ec2.
 * Access the URL
 
-### CloudWatch Lab
-* create dashboard, widgets, cloudwatch events, logs, and other alarms like CPU utilization
-* Alarms - notify if a threshold are hit. For example if CPU above 80% - send email
-* Events - do something if a resoure was modified. for example - call lambda when EC2 instance is available.
-* Log - aggregate, monitor, and store logs. application level using an agent that is installed on the EC2 (app, apache or kernel logs)
+### CloudWatch
+1. Dashboard like CPU utilization, memory, etc
+1. Alarms - notify if a threshold are hit. For example if CPU above 80% - send email
+1. Events - do something if a resoure was modified. for example - call lambda when EC2 instance is available.
+1. Log - aggregate, monitor, and store logs. application level using an agent that is installed on the EC2 (app, apache or kernel logs)
 
 Exam tips:
 * Standard monitoring = 5 min. Detailed monitoring = 1 min
@@ -331,7 +347,13 @@ Exam tips:
 * ssh ec2-user@ip -i file.pem
 * aws configure && aws s3 ls
 
-### IAM - Roles Lab
+### IAM Roles
+* Roles are more secure than storing your access key and secret access key on individual EC2.
+* Roles are easier to manage.
+* Roles can be assigned to an EC2 AFTER it has been provisioned using both the command line and the AWS console.
+* Roles are universal - you can use them in any region.
+
+#### IAM Roles Lab
 * Create EC2 and add role that allow it to access S3. You can add the role first or after and attach it during or after the creation of the ec2.
 * SSH into it: ssh ec2-user@public-ip -i key.pem
 * sudo su && aws s3 ls => list of my s3 buckets. I am able to see the s3 buckets thanks to the role we attached to that instance! I don't have to store the credentials of this IAM user on the EC2 anymore!
@@ -435,7 +457,7 @@ In the web console:
 
 First create policy:
 
-` ` `
+```
 {
    "Version": "2012-10-17",
    "Statement": [
@@ -456,11 +478,12 @@ First create policy:
                 "logs:PutLogEvents"
            ],
            "Resource": [
-` ` `
+```
+
 * When the policy is created, go back and create a role, and attach the permission policy you just created.
 * Create lambda that inserts the text into DynamoDB
 
-` ` `
+```
 import boto3
 import os
 import uuid
@@ -495,23 +518,23 @@ def lambda_handler(event, context):
     )
 
     return recordId
-` ` `
+```
 
 Add DB_TABLE_NAME and SNS_TOPIC variable names at the bottom.
 
 test the function with the following payload:
-` ` `
+```
 {
   "voice": "Joanna",
   "text": "Hello Cloud Gurus!"
 }
-` ` `
+```
 
 
 * Create lambda that converts the text to audio
 Set time limit to 5 min since Polly might take time to convert our text
 
-` ` `
+```
 import boto3
 import os
 from contextlib import closing
@@ -606,12 +629,12 @@ def lambda_handler(event, context):
     )
 
     return
-` ` `
+```
 
 * Create lambda that reads from DynamoDB
 
 
-` ` `
+```
 import boto3
 import os
 from boto3.dynamodb.conditions import Key, Attr
@@ -631,15 +654,15 @@ def lambda_handler(event, context):
         )
 
     return items["Items"]
-` ` `
+```
 
 Test:
 
-` ` `
+```
 {
   "postId": "*"
 }
-` ` `
+```
 
 * Create API Gateway
 * Add get, and a post, and enable cors, o
@@ -647,15 +670,15 @@ Test:
 Get, integration request, Mapping Templates
 check When there are no templates defined (recommended)
 type application/json in the textbox and the template is this:
-` ` `
+```
 {
     "postId" : "$input.params('postId')"
 }
-` ` `
+```
 
 
 Deploy the API (under the Actions dropdown). call it prod. paste the URL into the first line of this js script:
-` ` `
+```
 scripts.js
 var API_ENDPOINT = "https://lriqvkd9xg.execute-api.us-east-1.amazonaws.com/prod"
 
@@ -721,9 +744,10 @@ document.getElementById("postText").onkeyup = function(){
 	document.getElementById("charCounter").textContent="Characters: " + length;
 }
 
-` ` `
+```
 
 * Upload index.html, style.css, and scripts.js and open the URL of the S3 bucket.
 * enjoy!
 
 ### EC2 Exam Tips
+
