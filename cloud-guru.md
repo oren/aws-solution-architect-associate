@@ -200,6 +200,8 @@ URL for bucket: https://s3-eu-west-1.amazonaws.com/acloudguru1234
 
 ## 4. EC2
 
+Until very recently AWS exclusively used Xen Hypervisors, Recently they started making use of Nitro Hypervisors. Further information: https://aws.amazon.com/ec2/faqs/
+
 1. On-demand - no commitment. unpredictable workloads, testing.
 1. Reserved Instance - 1 or 3 years. predictable usage. cheaper than on-demand.
 1. standard RI - up to 75% off on-demand
@@ -207,6 +209,8 @@ URL for bucket: https://s3-eu-west-1.amazonaws.com/acloudguru1234
 11.   Scheduled RI - only have EC2 at certain time. once a day, week, month, etc.
 1. Spot - bid whatever price you want for instance capacity. apps that have flexible start and end times. apps that are only feasible at very low compute prices. genomics companies that only need a lot of resources on a certain time. If a spot instance is terminated by Amazon EC2, you don't get charged for a partial hour of usage. However, if you termitane the instance yourself, you will be charged for the complete hour in which the instance ran.
 1. Dedicated Hosts - physical EC2. Regulatory/privacy. licensing limitation. up to 70% off on-demand.
+
+**Question:** can I move reserved instance fro one region to another? No.
 
 EC2 Instance types:
 
@@ -290,6 +294,8 @@ Info
 * Volumes restored from encrypted snapshots are encypted automatically.
 * Sharing snapshot is possible only if they are unencrypted. They can be shared with other AWS accounts or made public.
 
+**Question:** is it possible to perform actions on an existing Amazon EBS Snapshot?. Yes, through he AWS APIs, CLI, and AWS Console.
+
 ### Lab - Encrypt Root Device Volume and create an AMI
 * First you need to have EC2. Stop it and go to 'Volumes'. Create a snapshot from that EBS Volume.
 * Copy it to different region and encrypt it. create image (AMI) from the EBS snapshot.
@@ -317,7 +323,7 @@ Summary:
 * Instance Store is ephemeral - you can't stop it and start it so it's less durable the EBS. If the host fails, you lose data.
 * EBS backed instances can be stopped and you don't lose data if they are stopped.
 * You can reboot both without loosing data.
-* Both ROOT volumes will be deleted on termination but with EBS volumes you can tell AWS to keeyp the root device volume.
+* Both ROOT volumes will be deleted on termination but with EBS volumes you can tell AWS to keep the root device volume.
 
 **How can I take a snapshot of a RAID Array?**
 * Problem: take a snapshot, the snapshot excludes data held in the cache by applications and the OS. This tends not to matter on a single volume. However, using multiple volumes in a RAID array, this can be a problem due to interdependencies of the array.
@@ -765,5 +771,214 @@ document.getElementById("postText").onkeyup = function(){
 * Upload index.html, style.css, and scripts.js and open the URL of the S3 bucket.
 * enjoy!
 
-### EC2 Exam Tips
+### Questions
 
+**Which of the following statements are true about containers on AWS? (Choose 5)**
+1. You can install and manage Kubernetes on AWS, yourself.
+1. ECS allows you to control the scheduling and placement of your containers and tasks.
+1. You must use ECS to manage running Docker containers in AWS.
+1. ECR can be used to store Docker images.
+1. To use private images in ECS, you must refer to Docker images from ECR.
+1. You can use the ECS Agent without needing to use ECS. This is false - ECS doesn't work without ECS agent.
+1. You can have AWS manage Kubernetes for you.
+1. To be able to use ECS, you must use the ECS Agent. This is true.
+
+Answer: 1, 2, 4, 7, 8
+
+Further information:
+* http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html
+* http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
+* https://hub.docker.com/r/amazon/amazon-ecs-agent/
+* http://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html
+
+**You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes.**
+
+Answer: True
+
+**Question**
+* you have developed a new web application in the US-West-2 Region that requires six Amazon Elastic Compute Cloud (EC2) instances to be running at all times. US-West-2 comprises three Availability Zones (us-west-2a, us-west-2b, and us-west-2c). You need 100 percent fault tolerance: should any single Availability Zone in us-west-2 become unavailable, the application must continue to run. How would you make sure 6 servers are ALWAYS available? NOTE: each answer has 2 possible deployment configurations. Select the answer that gives TWO satisfactory solutions to this scenario.
+
+Solution 1: us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with three EC2 instances. Solution 2: us-west-2a with four EC2 instances, us-west-2b with two EC2 instances, and us-west-2c with two EC2 instances.
+
+Solution 1: us-west-2a with six EC2 instances, us-west-2b with six EC2 instances, and us-west-2c with no EC2 instances. Solution 2: us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with three EC2 instances.
+
+Solution 1: us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with no EC2 instances. Solution 2: us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with three EC2 instances.
+
+Solution 1: us-west-2a with two EC2 instances, us-west-2b with two EC2 instances, and us-west-2c with two EC2 instances. Solution 2: us-west-2a with six EC2 instances, us-west-2b with six EC2 instances, and us-west-2c with no EC2 instances.
+
+Answer: 2
+
+You need to work though each case to find which will provide you with the required number of running instances even if one AZ is lost. Hint: always assume that the AZ you lose is the one with the most instances. Remember that the client has stipulated that they MUST have 100% fault tolerance.
+Further information:
+* https://acloud.guru/course/aws-certified-solutions-architect-associate/discuss/-KFIeaB-fySmPO6lHppl/for-question-5-why-not-use-all-az-for-the-first-answer
+* https://acloud.guru/course/aws-certified-solutions-architect-associate/discuss/-KFAnKuY
+
+
+**Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI?**
+1. via the CLI
+1. No
+1. via the AWS API
+1. Yes
+
+Answer: 2
+
+** Individual instances are provisioned ________. **
+1. in regions
+1. in AZ
+1. Globaly
+
+Answer: 2
+
+**Will an Amazon EBS root volume persist independently from the life of the terminated EC2 instance to which it was previously attached? In other words, if I terminated an EC2 instance, would that EBS root volume persist? **
+1. Only if I specify (using either the AWS Console or the CLI) that it should do so.
+1. no
+1. yes
+1. It depends on the region in which the EC2 instance is provisioned.
+
+Answer: 1
+
+You can control whether an EBS root volume is deleted when its associated instance is terminated. The default delete-on-termination behaviour depends on whether the volume is a root volume, or an additional volume. By default, the DeleteOnTermination attribute for root volumes is set to 'true.' However, this attribute may be changed at launch by using either the AWS Console or the command line. For an instance that is already running, the DeleteOnTermination attribute must be changed using the CLI. Further information: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#delete-on
+
+## Route53
+
+### DNS 101
+
+### Route 53 Register A Domain Name Lab
+
+### RRouting Types Of DNS Available With Route53
+
+### RSimple Routing Policy Lab
+
+### RWeighted Routing Policy Lab
+
+### RLatency Routing Policy Lab
+
+### RFailover Routing Policy Lab
+
+### RGeolocation Routing Policy Lab
+
+### RMultivalue Answer Routing
+
+### RDNS Exam Tips
+
+### RRoute53 Quiz
+
+## Databases on AWS
+### Databases 101
+### DLab: Create our first RDS Instance
+### DRDS - Back Ups, Multi-AZ & Read Replicas
+### DDynamoDB
+### DRedShift
+### DElasticache
+### DAurora
+### DDatabases Summary
+### DDatabases Quiz
+
+VPC 01:31:08
+13:51
+Introduction and Overview
+18:03
+Build Your Own Custom VPC
+05:27
+Build A Custom VPC - Part 2
+13:44
+Network Address Translation (NAT)
+12:49 2 months ago updated
+Access Control Lists (ACLs)
+02:19
+Custom VPCs and ELBs
+04:28
+VPC Flow Logs
+03:57
+NATs vs Bastions
+06:50
+VPC End Points
+03:30
+VPC Clean Up
+06:10
+Summary
+VPC Quiz
+Chapter 9
+Application Services 01:00:41
+12:49
+SQS
+08:18
+SWF
+05:38
+SNS
+02:01
+Elastic Transcoder
+06:34
+API Gateway
+09:25
+Kinesis 101
+05:54
+Kinesis Lab
+10:02
+Application Services Summary
+Application Services Quiz
+Chapter 10
+The Real World - Creating a fault tolerant Word Press Site 01:05:24
+13:33
+Getting Setup
+19:41
+Setting Up EC2
+19:20
+AutoScaling
+10:52 2 months ago updated
+CloudFormation!
+01:58
+Want To Be A Real Solutions Architect? You Need To Know CloudFormation!
+Chapter 11
+Whitepapers & The Well Architected Framework 01:46:00
+02:16
+What Else Do I Need To Know?
+12:28
+Architecting for the AWS Cloud: Best Practices
+06:19
+Introduction To The Well Architected Framework
+18:14
+Security
+10:50
+Reliability
+18:24
+Performance Efficiency
+14:32
+Cost Optimization
+14:02
+Operational Excellence
+08:55
+Summary
+Chapter 12
+Additional Exam Tips 01:44:24
+10:51
+Exam Tips Based On Student Feedback
+07:53
+Consolidated Billing
+11:40 2 months ago updated
+AWS Organizations Lab
+14:19
+Cross Account Access
+11:50 2 months ago updated
+Resource Groups & Tagging
+04:23
+VPC Peering
+05:01
+Direct Connect
+08:07
+Security Token Service
+03:15
+Active Directory Integration
+03:07
+Workspaces
+12:21
+ECS - Part 1 - What is Docker
+11:37
+ECS - Part 2 - What is ECS?
+Chapter 13
+Thank You, Good Luck & Coming Soon 05:52
+05:52
+Thank You To All My Students
+Scenario Quiz
+Mini Exam
+Final Practice Exam
