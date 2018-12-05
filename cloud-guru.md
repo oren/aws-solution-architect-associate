@@ -843,27 +843,83 @@ You can control whether an EBS root volume is deleted when its associated instan
 
 ### DNS 101
 * ELBs do not have pre-defined IPv4 addresses. You resolve to them using a DNS name.
-* CNAME - resolve one domain name to another. point mobile.foo.com to m.foo.com. Can't be used for naked domain names (foo.com).
+* CNAME record - resolve one domain name to another. point mobile.foo.com to m.foo.com. Can't be used for naked domain names (foo.com).
+* CNAME record can point to any DNS record that is hosted anywhere.
+* Alias record can only point to a selected AWS resources or to another record in the hosted zone that you're creating the alias record in.
 * Alias Record - m.foo.com or foo.com
 * If you can chose, use Alias record over a CNAME.
 
-SOA Records:
+Supported DNS Records:
+* A Record Type
+* AAAA Record Type
+* CAA Record Type
+* CNAME Record Type
+* MX Record Type
+* NAPTR Record Type
+* NS Record Type
+* PTR Record Type
+* SOA Record Type
+* SPF Record Type
+* SRV Record Type
+* TXT Record Type
 
 ### Route 53 Register A Domain Name Lab
 
-### Routing Types Of DNS Available With Route53
+#### Routing Types Of DNS Available With Route53
+Routing Policies: SImple, Weighted, Latency-based, Failover, Geolocation, Multivalue
 
-### Simple Routing Policy Lab
+#### Simple Routing Policy Lab
+Single resource behind the router
 
-### Weighted Routing Policy Lab
+#### Weighted Routing Policy Lab
+Send different precentage of the traffic to each resource (20% to us-east-1, 80% to us-west1)
 
-### Latency Routing Policy Lab
+#### Latency Routing Policy Lab
+Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
 
-### Failover Routing Policy Lab
+#### Failover Routing Policy Lab
+Use when you want to configure active-passive failover. using healthcheck
 
-### Geolocation Routing Policy Lab
+#### Geolocation Routing Policy Lab
+Use when you want to route traffic based on the location of your users. For example - send users from europe to european destination/region etc
 
-### Multivalue Answer Routing
+#### Geoproximity Routing Policy Lab
+Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.
+
+#### Multivalue Answer Routing
+When you want to send traffic equaily. Round roubin with healthcheck
+
+**Question:**: You have an enterprise solution that operates Active-Active with facilities in Regions US-West and India. Due to growth in the Asian market you have been directed by the CTO to ensure that only traffic in Asia (between Turkey and Japan) is directed to the India Region. Which of these will deliver that result? (Choose 2)
+* R53 - Geolocation routing policy
+* Latency routing policy. This will ensure only customers that are close will go the the India installation.
+* R53 - Geoproximity routing policy
+* R53 - Weighted routing policy, calculate the proportion of customers in each and weight the policy to ensure that each location gets a fair load.
+* CloudFront a combination of Blacklist & White lists to control which countries so to which Site,
+
+Answer: 1, 3
+The instruction from the CTO is clear that that the division is based on geography. Latency based routing will approximate geographic balance only when all routes and traffic evenly supported which is rarely the case due to infrastructure and day night variations. You cannot combine Blacklist & Whitelist in CloudFront. Weighted routing is randomized and will not respect Geo boundaries. Geolocation is based on national boundaries and will meet the needs well. Geoproximity is based on Latitude & Longitude and will also provide a good approximation with potentially less configuration.
+
+Further information:
+* https://aws.amazon.com/about-aws/global-infrastructure/
+* https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo
+* https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestric
+
+**Question:** In AWS Route53, which of the following are true? (Choose 2)
+1. CNAME records can point at any resource with an routable IP address on the network.
+1. Route53 allows you to create a CNAME at the top node of a DNS namespace (zone apex)
+1. R53 Alias Records allow fast response to AWS initiated environmental changes
+1. Alias Records can point at any resource with an routable IP address on the network.
+1. Alias Records provide a Route 53–specific extension to DNS functionality
+
+Answer: 1, 5
+
+Further information:
+* https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html
+* https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alia
+
+
+Notes:
+* Each account can have max of 50 domains. It can be increased by contacting AWS support.
 
 ### DNS Exam Tips
 
