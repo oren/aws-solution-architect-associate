@@ -822,14 +822,14 @@ Further information:
 
 Answer: 2
 
-** Individual instances are provisioned ________. **
+**Individual instances are provisioned ________.**
 1. in regions
 1. in AZ
 1. Globaly
 
 Answer: 2
 
-**Will an Amazon EBS root volume persist independently from the life of the terminated EC2 instance to which it was previously attached? In other words, if I terminated an EC2 instance, would that EBS root volume persist? **
+**Will an Amazon EBS root volume persist independently from the life of the terminated EC2 instance to which it was previously attached? In other words, if I terminated an EC2 instance, would that EBS root volume persist?**
 1. Only if I specify (using either the AWS Console or the CLI) that it should do so.
 1. no
 1. yes
