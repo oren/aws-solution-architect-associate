@@ -929,8 +929,37 @@ Notes:
 ### Databases 101
 ### Lab: Create our first RDS Instance
 ### RDS - Back Ups, Multi-AZ & Read Replicas
+There are two types of backups for AWS:
+1. Automated backup
+1. Database Snapshots (munual)
+
+Notes:
+* Automated are destoryed after RDS is deleted.
+* Restoring a db create new instance with new DNS entry.
+
+Multi-AZ vs Read Replica
+* Multi-AZ - exact copy of the DB in another AZ. a minute downtime. used for for disaster recovery (DR).
+* Read repcila - read only copy of your DB. Used for scaling out. Great for read-heavy usecases. Not used for DR.
+
+Notes:
+* You must turn on automatic backups to deploy a read replica
+* You can have up to 5 read replica copies of any database
+* You can have read replicas of read replicas
+* Each read replica will have it's own DNS endpoint
+* You can have read replica that have Multi-AZ
+* You can create read replicas of Multi-AZ source database
+* Read replicas can be promoted to be their own databases. This breaks replication
+* You can have read replica in a second region
+
 ### DynamoDB
+Basic info:
+* SSD, 3 AZs, Eventual consistent reads (default) or storngly consistent read
+* Eventual consistent read - best read performance
+* write is more expensive than read. write cost $0.0065 per hour for every 10 units. read is the same price for every 50 units.
+In order to decide on the write model, you need to ask yourself the following: after you inserted data into DynamoDB, how fast do you need to read it? if it's more than a second, you can use eventual consistent reads. If it's more, you should use strong consistent reads.
+
 ### RedShift
+
 ### Elasticache
 ### Aurora
 ### Databases Summary
