@@ -959,7 +959,7 @@ Basic info:
 In order to decide on the write model, you need to ask yourself the following: after you inserted data into DynamoDB, how fast do you need to read it? if it's more than a second, you can use eventual consistent reads. If it's more, you should use strong consistent reads.
 
 ### RedShift
-Datawarehouse
+Datawarehouse. Single node (160GB) or Multi-Node - leader node and compute nodes (max of 128 nodes)
 
 ### Elasticache
 There are two engines available from ElastiCache: Redis and memecached
@@ -967,7 +967,16 @@ There are two engines available from ElastiCache: Redis and memecached
 ### Aurora
 Scaling - 2 copies of your data is contained in each AZ with minimum of 3 AZs. 6 copies of your data.
 
+2 types of replicas:
+* Aurora Replicas (currently 15)
+* MySQL Read Replicas
+
+
 ### Databases Summary
+Scaling of DynamoDB vs RDS:
+* DynamoDB - push button scaling. scale your db without downtime.
+* RDS - not so easy. Use bigger instance or add a read replica.
+
 ### Databases Quiz
 
 ## VPC
