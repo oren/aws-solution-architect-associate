@@ -971,7 +971,6 @@ Scaling - 2 copies of your data is contained in each AZ with minimum of 3 AZs. 6
 * Aurora Replicas (currently 15)
 * MySQL Read Replicas
 
-
 ### Databases Summary
 Scaling of DynamoDB vs RDS:
 * DynamoDB - push button scaling. scale your db without downtime.
