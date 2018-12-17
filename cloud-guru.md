@@ -959,9 +959,14 @@ Basic info:
 In order to decide on the write model, you need to ask yourself the following: after you inserted data into DynamoDB, how fast do you need to read it? if it's more than a second, you can use eventual consistent reads. If it's more, you should use strong consistent reads.
 
 ### RedShift
+Datawarehouse
 
 ### Elasticache
+There are two engines available from ElastiCache: Redis and memecached
+
 ### Aurora
+Scaling - 2 copies of your data is contained in each AZ with minimum of 3 AZs. 6 copies of your data.
+
 ### Databases Summary
 ### Databases Quiz
 
