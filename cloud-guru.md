@@ -929,6 +929,8 @@ Notes:
 ### Databases 101
 ### Lab: Create our first RDS Instance
 ### RDS - Back Ups, Multi-AZ & Read Replicas
+RDS is great for OLTP type of work.
+
 There are two types of backups for AWS:
 1. Automated backup
 1. Database Snapshots (munual)
@@ -936,6 +938,7 @@ There are two types of backups for AWS:
 Notes:
 * Automated are destoryed after RDS is deleted.
 * Restoring a db create new instance with new DNS entry.
+* default 7 days. max 35.
 
 Multi-AZ vs Read Replica
 * Multi-AZ - exact copy of the DB in another AZ. a minute downtime. used for for disaster recovery (DR).
@@ -950,6 +953,8 @@ Notes:
 * You can create read replicas of Multi-AZ source database
 * Read replicas can be promoted to be their own databases. This breaks replication
 * You can have read replica in a second region
+* Automated backups are turned on by default.
+* Changes to the backup windows are taking effect immediately
 
 ### DynamoDB
 Basic info:
@@ -977,6 +982,7 @@ Scaling of DynamoDB vs RDS:
 * RDS - not so easy. Use bigger instance or add a read replica.
 
 ### Databases Quiz
+* Amazon Athena is an interactive query service that makes it easy to analyse data in Amazon S3, using standard SQL commands. It will work with a number of data formats including "JSON", "Apache Parquet", "Apache ORC" amongst others, but "XML" is not a format that is supported.
 
 ## VPC
 ### DIntroduction and Overview
