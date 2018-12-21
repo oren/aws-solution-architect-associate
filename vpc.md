@@ -11,6 +11,7 @@
 * Apply to the subnet.
 * Connects components within the VPC. It defines where traffic is directed.
 * You can have multiple route tables in a VPC.
+* Only ports. no IPs
 
 ### Security Groups
 Apply to an instance.
@@ -86,7 +87,7 @@ Exam Tips:
 * Network ACLs contain a numbered list of rules that is evaluated in order.
 
 ## Custom VPCs and ELBs
-Application LB is the best choice unless you want super performance
+Application LB is the best choice unless you want super performance. You need two public subnets in order to deploy one.
 
 ## VPC Flow Logs
 Record IP traffic in and out of your VPC. Saved in CloudWatch.
@@ -109,6 +110,8 @@ Traffic that can't be monitored:
 * A Bastion is used to securely administrater EC2s (using SSH or RDP) in private subnets. Australia calls them 'jump boxes'.
 
 ## VPC End Points
-## VPC Clean Up
-## Summary
-## VPC Quiz
+Allow to access the internet without accessing the public internet. Instead of NAT Gateway we can setup VPC Endpoint.
+Example: you want to access S3 from an EC2 that in a private subnet. You can do that with NAT Gateway but a better approach is VPC Endpoint.
+
+How do set it up?
+Go to 'endpoint' and create new one. The type you want is Gateway (it's HA). Associate it with the route table of your VPC. The VCP endpoint will be added to the route table.

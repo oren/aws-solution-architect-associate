@@ -1,5 +1,4 @@
 ## RDS
-
 What data transfer charge is incurred when replicating data from your primary RDS instance to your secondary RDS instance?
 No charges
 
@@ -79,7 +78,6 @@ storage of data within DynamoDB, therefore these two answers are correct. There 
 Further information: https://aws.amazon.com/dynamodb/pricing/
 
 ## EBS
-
 You are hosting a MySQL database on the root volume of an EC2 instance. The database is using a large number of IOPS, and you need to increase the number of IOPS available to it. What should you do?
 Add 4 additional EBS SSD volumes and create a RAID 10 using these volumes.
 

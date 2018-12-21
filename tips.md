@@ -1,4 +1,5 @@
 Prepare:
+* https://aws.amazon.com/certification/certification-prep/
 * https://www.whizlabs.com/aws-solutions-architect-associate/
 * https://www.whizlabs.com/blog/aws-certified-solutions-architect-associate-released-february-2018/
 
