@@ -21,3 +21,34 @@ In a custom VPC with new subnets in each AZ, there is a Route that supports comm
 Further information:
 * https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html
 * https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html
+
+When I create a new security group, all outbound traffic is allowed by default.
+* true
+
+A VPN connection consists of which of the following components? (Choose 2)
+* Customer Gateway and Virtual Private Gateway
+
+When connecting a VPN between AWS and a third party site, the Customer Gateway is created within AWS, but it contains information about the third party site e.g. the external IP address and type of routing. The Virtual Private Gateway has the information regarding the AWS side of the VPN and connects a specified VPC to the VPN. "Direct Connect Gateway" and "Cross Connect" are both Direct Connect related terminology and have nothing to do with VPNs.
+
+Further information:
+* https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html
+* https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways.html
+* https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html
+
+Are you permitted to conduct your own vulnerability scans on your own VPC without alerting AWS first?
+* No
+
+You have just created a 2nd VPC and launched an EC2 instance in a subnet of that VPC. You want this instance to be publicly available, but you forgot to assign a public IP address during creation. How might you make your instance reachable from the outside world?
+* Create an Internet gateway and an Elastic IP address. Associate the Elastic IP with the EC2 instance.
+
+An IGW is provided by default in a default VPC, but not in a manually created VPC. A Public IP address is needed, and of the options provided an EIP is the best option.
+
+Further information:
+* https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html
+* https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/working-with-vpcs.html
+* https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-ip-addressing.html
+
+
+Note:
+* In Amazon VPC, an instance retains its private IP.
+* When you create a custom VPC, a default Security Group, Access control List, and Route Table are created automaticaly. You must create your own subnets, Internet Gateway, and NAT Gateway (if you need one.) 
