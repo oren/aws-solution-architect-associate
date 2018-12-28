@@ -1,5 +1,4 @@
-Table of Contents
-=================
+## Table of Contents
 
 * [1. Operationl Excellence](#1-operationl-excellence)
   * [Areas](#areas)
