@@ -33,6 +33,29 @@ Design Principles:
 * Keep people away from data.
 * Prepare for security events.
 
+Best practices:
+
+Identity and Access Management:
+* How do you manage credentials and authentication?
+* How do you control human access?
+* How do you control programmatic access?
+
+Detective Controls:
+* How do you detect and investigate security events?
+* How do you defend against emerging security threats?
+
+Infrastructure Protection:
+* How do you protect your networks?
+* How do you protect your compute resources?
+
+Data Protection:
+* How do you classify your data?
+* How do you protect your data at rest?
+* How do you protect your data in transit?
+
+Incident Response:
+* How do you respond to an incident?
+
 ## 3. Reliability
 Design Principles:
 * Test recovery procedures
