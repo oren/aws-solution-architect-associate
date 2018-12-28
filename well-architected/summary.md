@@ -135,7 +135,8 @@ Design Principles:
 
 #### 1. Selection
 Resource Types:
-**1. Compute**
+
+1.1 Compute
 
 * How do you select the best performing architecture?
 * How do you select your compute solution?
@@ -143,7 +144,7 @@ Resource Types:
 
 Solutions: Auto Scaling
 
-**2. Storage**
+1.2 Storage
 
 Optimal storage depeds on the following:
 * Access Method - block, file, or object
@@ -162,7 +163,7 @@ Questions
 
 Solutions: EBS (SSD or PIOPS), S3, and S3 transfer acceleration
 
-**3. Databases**
+1.3 Databases
 
 Optimal database solution depedns on the following: consistency, high availability, No-SQL, DR
 
@@ -174,7 +175,7 @@ Questions
 
 Solutions: RDS, DynamoDB, etc
 
-**4. Network**
+1.4 Network
 * How do you configure your networking solution?
 
 Solutions: Route 53 with latency-based routing, VPC endpoints, AWS Direct Connect to reduce network distance or jitter
@@ -193,12 +194,6 @@ Solutions: CloudWatch that triggers actions on Lambda
 * How do you use tradeoffs to improve performance?
 
 Solutions: ElastiCache, CloudFront, Snowball, RDS Read replicas.
-
-### Solutions
-* Reduce load on your database and reduce latency with RDS read replicas
-* Predictable latency between your office and AWS using Direct Connect
-* Reduce latency by adding infrastructure in the region close to your cutsomers
-* Reduce latency by cache stuff - ElastiCache or CloudFront
 
 ## 5. Cost Optimization
 Run systems to deliver business value at the lowest price point.
