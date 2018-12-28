@@ -33,7 +33,7 @@ Design Principles:
 * Keep people away from data.
 * Prepare for security events.
 
-Best practices:
+### Best practices:
 
 Identity and Access Management:
 * How do you manage credentials and authentication?
