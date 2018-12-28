@@ -1,4 +1,5 @@
 ## 1. Operationl Excellence
+The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
 
 Design Principles
 * Infrastructure as code
@@ -13,17 +14,22 @@ Design Principles
 * How do you design your workload to enable operability?
 * How do you know that you are ready to support a workload?
 
+Services: AWS Config and AWS Config rules can be used to create standards for workloads and to determine if environments are compliant with those standards before being put into production.
+
 **Operate**
 * What factors drive your understanding of operational health?
 * How do you manage operational events?
 
+Services: Amazon CloudWatch allows you to monitor the operational health of a workload.
+
 **Evolve**
 * How do you evolve operations?
 
-#### Services
-CloudFormation, AWS Config, AWS Config rules (standards for workloads), CloudWatch, ElasticSearch (analyze logs)
+Services: Amazon Elasticsearch Service (Amazon ES) allows you to analyze your log data to gain actionable insights quickly and securely.
 
 ## 2. Security
+The ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
+
 Design Principles:
 * Separate duties and give minimal access.
 * Enable traceability.
@@ -34,35 +40,62 @@ Design Principles:
 * Prepare for security events.
 
 ### Best practices:
-
 Identity and Access Management:
 * How do you manage credentials and authentication?
 * How do you control human access?
 * How do you control programmatic access?
 
+Services: IAM, MFA, and AWS Organizations
+
 Detective Controls:
 * How do you detect and investigate security events?
 * How do you defend against emerging security threats?
 
+Services: AWS CloudTrail, AWS Config (inventory), GuardDuty (managed threat detection), CloudWatch
+
 Infrastructure Protection:
 * How do you protect your networks?
 * How do you protect your compute resources?
+
+Services: VPC, CloudFront, AWS Shield (integrates with CF), AWS WAF (firewall on CF or ALB)
 
 Data Protection:
 * How do you classify your data?
 * How do you protect your data at rest?
 * How do you protect your data in transit?
 
+Services: encryption in transit and at rest, Macie (find sensitive data), KMS (manage encryption keys)
+
 Incident Response:
 * How do you respond to an incident?
 
+Services: IAM can grant access to incident response teams, CloudFormation can help investigation by creating a 'clean room', CloudWatch Events can trigger automated responses like Lambda
+
 ## 3. Reliability
+The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
+
 Design Principles:
 * Test recovery procedures
 * Automatic recovery
 * Scale horizontally
 * Provision resources accurately
 * Manage change with automation
+
+### Areas
+**Foundations**
+* How are you managing AWS service limits for your accounts?
+* How do you plan your network topology on AWS?
+
+**Change Management**
+* How does your system adapt to changes in demand?
+* How do you monitor AWS resources?
+* How do you implement change?
+
+**Failure Management**
+* How do you back up data?
+* How does your system withstand component failures?
+* How do you test resilience?
+* How do you plan for disaster recovery?
 
 ### Services
 General service for reliability: Amazon CloudWatch
