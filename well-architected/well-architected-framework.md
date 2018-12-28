@@ -769,7 +769,8 @@ Best practices:
 * Use process for evaluation: Have a process to evaluate new resource types and sizes. Rerun
 performance tests to evaluate any improvements in performance efficiency.
 Monitoring
-PERF 7 How do you monitor your resources to ensure they are performing as expected?
+
+**PERF 7 How do you monitor your resources to ensure they are performing as expected?**
 System performance can degrade over time. Monitor system performance to identify this
 degradation and remediate internal or external factors, such as the operating system or
 application load
@@ -878,7 +879,8 @@ to defer work until there is sufficient capacity to process it.
 turning off development and test instances over the weekend, following quarterly or
 annual schedules (for example, Black Friday).
 Expenditure Awareness
-COST 6 How do you monitor usage and cost?
+
+**COST 6 How do you monitor usage and cost?**
 Establish policies and procedures to monitor, control, and appropriately assign your costs.
 Leverage tools provided by AWS for visibility into who is using what, and at what cost. This
 provides you with a deeper understanding of your business needs and your teams’ operations.
@@ -907,7 +909,8 @@ instances and resources in each group; for example, dev, test, and prod groups. 
 to AWS services and third-party solutions.
 * Track project lifecycle: Track, measure, and audit the lifecycle of projects, teams, and
 environments to avoid using and paying for unnecessary resources.
-COST 8 How do you decommission resources?
+
+**COST 8 How do you decommission resources?**
 Implement change control and resource management from project inception to end-of-life so
 that you can identify necessary process changes or enhancements where appropriate. Work
 with AWS Support for recommendations on how to optimize your project for your workload: for
