@@ -58,33 +58,33 @@ Design Principles:
 * Prepare for security events.
 
 ### Areas
-**Identity and Access Management**
+**1. Identity and Access Management**
 * How do you manage credentials and authentication?
 * How do you control human access?
 * How do you control programmatic access?
 
 Services: IAM, MFA, and AWS Organizations
 
-**Detective Controls**
+**2. Detective Controls**
 * How do you detect and investigate security events?
 * How do you defend against emerging security threats?
 
 Services: AWS CloudTrail, AWS Config (inventory), GuardDuty (managed threat detection), CloudWatch
 
-**Infrastructure Protection**
+**3. Infrastructure Protection**
 * How do you protect your networks?
 * How do you protect your compute resources?
 
 Services: VPC, CloudFront, AWS Shield (integrates with CF), AWS WAF (firewall on CF or ALB)
 
-**Data Protection**
+**4. Data Protection**
 * How do you classify your data?
 * How do you protect your data at rest?
 * How do you protect your data in transit?
 
 Services: encryption in transit and at rest, Macie (find sensitive data), KMS (manage encryption keys)
 
-**Incident Response**
+**5. Incident Response**
 * How do you respond to an incident?
 
 Services: IAM can grant access to incident response teams, CloudFormation can help investigation by creating a 'clean room', CloudWatch Events can trigger automated responses like Lambda
