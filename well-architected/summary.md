@@ -27,20 +27,20 @@ Design Principles
 * Learn and share your learning with the organization
 
 ### Areas
-**Prepare**
+**1. Prepare**
 * What factors drive your operational priorities?
 * How do you design your workload to enable operability?
 * How do you know that you are ready to support a workload?
 
 Services: AWS Config and AWS Config rules can be used to create standards for workloads and to determine if environments are compliant with those standards before being put into production.
 
-**Operate**
+**2. Operate**
 * What factors drive your understanding of operational health?
 * How do you manage operational events?
 
 Services: Amazon CloudWatch allows you to monitor the operational health of a workload.
 
-**Evolve**
+**3. Evolve**
 * How do you evolve operations?
 
 Services: Amazon Elasticsearch Service (Amazon ES) allows you to analyze your log data to gain actionable insights quickly and securely.
@@ -57,34 +57,34 @@ Design Principles:
 * Keep people away from data.
 * Prepare for security events.
 
-### Best practices:
-Identity and Access Management:
+### Areas
+**Identity and Access Management**
 * How do you manage credentials and authentication?
 * How do you control human access?
 * How do you control programmatic access?
 
 Services: IAM, MFA, and AWS Organizations
 
-Detective Controls:
+**Detective Controls**
 * How do you detect and investigate security events?
 * How do you defend against emerging security threats?
 
 Services: AWS CloudTrail, AWS Config (inventory), GuardDuty (managed threat detection), CloudWatch
 
-Infrastructure Protection:
+**Infrastructure Protection**
 * How do you protect your networks?
 * How do you protect your compute resources?
 
 Services: VPC, CloudFront, AWS Shield (integrates with CF), AWS WAF (firewall on CF or ALB)
 
-Data Protection:
+**Data Protection**
 * How do you classify your data?
 * How do you protect your data at rest?
 * How do you protect your data in transit?
 
 Services: encryption in transit and at rest, Macie (find sensitive data), KMS (manage encryption keys)
 
-Incident Response:
+**Incident Response**
 * How do you respond to an incident?
 
 Services: IAM can grant access to incident response teams, CloudFormation can help investigation by creating a 'clean room', CloudWatch Events can trigger automated responses like Lambda
@@ -100,20 +100,20 @@ Design Principles:
 * Manage change with automation
 
 ### Areas
-**Foundations**
+**1. Foundations**
 * How are you managing AWS service limits for your accounts?
 * How do you plan your network topology on AWS?
 
 Services: IAM, VPC, AWS Trusted Advisor (service limits), AWS Shield (managed DDoS)
 
-**Change Management**
+**2. Change Management**
 * How does your system adapt to changes in demand?
 * How do you monitor AWS resources?
 * How do you implement change?
 
 Services: CloudTrail, AWS Config, Auto Scaling, CloudWatch
 
-**Failure Management**
+**3. Failure Management**
 * How do you back up data?
 * How does your system withstand component failures?
 * How do you test resilience?
