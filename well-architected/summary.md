@@ -1,4 +1,4 @@
-## Operationl Excellence
+## 1. Operationl Excellence
 
 Design Principles
 * Infrastructure as code
@@ -18,23 +18,47 @@ Design Principles
 * How do you manage operational events?
 
 **Evolve**
-** How do you evolve operations?**
+* How do you evolve operations?
 
-## Performance Effiniency
+#### Services
+CloudFormation, AWS Config, AWS Config rules (standards for workloads), CloudWatch, ElasticSearch (analyze logs)
 
-Design Principles
-* Democratize advanced technologies
-* Go global in minutes
-* GUse serverless architectures
-* GExperiment more often
-* GMechanical sympathy
+## 2. Security
+Design Principles:
+* Separate duties and give minimal access.
+* Enable traceability.
+* Apply security in all layers.
+* Automate security best practices.
+* Protect data in transit and at rest.
+* Keep people away from data.
+* Prepare for security events.
 
+## 3. Reliability
+Design Principles:
+* Test recovery procedures
+* Automatic recovery
+* Scale horizontally
+* Provision resources accurately
+* Manage change with automation
+
+### Services
+General service for reliability: Amazon CloudWatch
+* Foundations: IAM, VPC, AWS Trusted Advisor, AWS Shield
+* Change Management: CloudTrail, AWS Config, Auto Scaling, CloudWatch
+* Failure Management: AWS CloudFormation, S3 for backups, Glacier for archives, AWS KMS.
+
+## 4. Performance Efficiency
+Design Principles:
+* Avoid implementing solutions that exist as cloud services
+* Deploy your system to multiple regions quickly
+* Use serverless architecture
+* Experiment
+* Choose the right technology for your use-case
 
 ### Areas
 
 **Compute**
 
-Questions
 * How do you select the best performing architecture?
 * How do you select your compute solution?
 * How do you configure your networking solution?
@@ -71,3 +95,16 @@ Solutions
 * Predictable latency between your office and AWS using Direct Connect
 * Reduce latency by adding infrastructure in the region close to your cutsomers
 * Reduce latency by cache stuff - ElastiCache or CloudFront
+
+## 5. Cost Optimization
+* Adopt a consumption model
+* Measure overall efficiency
+* Stop spending money on data center operations
+* Analyze and attribute expenditure
+* Use managed and application level services to reduce cost of ownership
+
+### Services
+* Cost-effective Resources: Cost Explorer - RI recommendations and more. CloudWatch and Trust Advisor. Aurora - remove licensing costs. AWS Direct Connect and Amazon CloudFront to optimize data transfer.
+* Match supply and demand: Auto Scaling.
+* Expenditure Awareness: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
+* Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
