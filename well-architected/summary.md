@@ -1,3 +1,25 @@
+## Operationl Excellence
+
+Design Principles
+* Infrastructure as code
+* Annotate documentation
+* Improve your processes
+* Test failure scenarios and your response processes
+* Learn and share your learning with the organization
+
+### Areas
+**Prepare**
+* What factors drive your operational priorities?
+* How do you design your workload to enable operability?
+* How do you know that you are ready to support a workload?
+
+**Operate**
+* What factors drive your understanding of operational health?
+* How do you manage operational events?
+
+**Evolve**
+** How do you evolve operations?**
+
 ## Performance Effiniency
 
 Design Principles
