@@ -1,20 +1,20 @@
 ## Table of Contents
 
 * [1. Operationl Excellence](#1-operationl-excellence)
-		* [Areas](#areas)
+	* [Areas](#areas)
 * [2. Security](#2-security)
-		* [Best practices:](#best-practices)
+	* [Best practices:](#best-practices)
 * [3. Reliability](#3-reliability)
-		* [Areas](#areas-1)
+	* [Areas](#areas-1)
 * [4. Performance Efficiency](#4-performance-efficiency)
-		* [Areas](#areas-2)
-			* [1. Selection](#1-selection)
-			* [2. Review](#2-review)
-			* [3. Monitoring](#3-monitoring)
-			* [4. Tradeoffs](#4-tradeoffs)
-		* [Solutions](#solutions)
+	* [Areas](#areas-2)
+		* [1. Selection](#1-selection)
+		* [2. Review](#2-review)
+		* [3. Monitoring](#3-monitoring)
+		* [4. Tradeoffs](#4-tradeoffs)
+	* [Solutions](#solutions)
 * [5. Cost Optimization](#5-cost-optimization)
-		* [Areas](#areas-3)
+	* [Areas](#areas-3)
 
 ## 1. Operationl Excellence
 The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
