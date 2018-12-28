@@ -307,7 +307,7 @@ operations metrics with cross-team participants from different areas of the busi
 identify opportunities for improvement, potential courses of action, and to share lessons
 learned.
 
-### 3.2 Security 
+### 3.2 Security
 #### 3.2.1 Identity and Access Management
 **SEC 1 How do you manage credentials for your workload?**
 
@@ -498,7 +498,7 @@ should be pre-provisioned so that an appropriate response can be made to an inci
 * Pre-deployed tools: InfoSec has the right tools pre-deployed into AWS so that an
 appropriate response can be made to an incident.
 * Run game days: Incident response simulations are conducted regularly, and lessons
-learned are incorporated into the architecture and operations. 
+learned are incorporated into the architecture and operations.
 
 ### 3.3 Reliability
 #### 3.3.1 Foundations
