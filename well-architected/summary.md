@@ -100,10 +100,14 @@ Design Principles:
 * How are you managing AWS service limits for your accounts?
 * How do you plan your network topology on AWS?
 
+Services: IAM, VPC, AWS Trusted Advisor (service limits), AWS Shield (managed DDoS)
+
 **Change Management**
 * How does your system adapt to changes in demand?
 * How do you monitor AWS resources?
 * How do you implement change?
+
+Services: CloudTrail, AWS Config, Auto Scaling, CloudWatch
 
 **Failure Management**
 * How do you back up data?
@@ -111,13 +115,11 @@ Design Principles:
 * How do you test resilience?
 * How do you plan for disaster recovery?
 
-### Services
-General service for reliability: Amazon CloudWatch
-* Foundations: IAM, VPC, AWS Trusted Advisor, AWS Shield
-* Change Management: CloudTrail, AWS Config, Auto Scaling, CloudWatch
-* Failure Management: AWS CloudFormation, S3 for backups, Glacier for archives, AWS KMS.
+Services: AWS CloudFormation, S3 for backups, Glacier for archives, AWS KMS.
 
 ## 4. Performance Efficiency
+The ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+
 Design Principles:
 * Avoid implementing solutions that exist as cloud services
 * Deploy your system to multiple regions quickly
@@ -127,13 +129,17 @@ Design Principles:
 
 ### Areas
 
-**Compute**
+#### 1. Selection
+Resource Types:
+**1. Compute**
 
 * How do you select the best performing architecture?
 * How do you select your compute solution?
 * How do you configure your networking solution?
 
-**Storage**
+Solutions: Auto Scaling
+
+**2. Storage**
 
 Optimal storage depeds on the following:
 * Access Method - block, file, or object
@@ -150,7 +156,9 @@ Questions
 * How do you monitor your resources to ensure they are performing as expected?
 * How do you ensure that the capacity and throughput of your storage solutions maches demand?
 
-**Databases**
+Solutions: EBS (SSD or PIOPS), S3, and S3 transfer acceleration
+
+**3. Databases**
 
 Optimal database solution depedns on the following: consistency, high availability, No-SQL, DR
 
@@ -160,21 +168,66 @@ Questions
 * How do you monitor the performance of your database?
 * How do you ensure that the capacity and throughput of your dbs matches demand?
 
-Solutions
+Solutions: RDS, DynamoDB, etc
+
+**4. Network**
+* How do you configure your networking solution?
+
+Solutions: Route 53 with latency-based routing, VPC endpoints, AWS Direct Connect to reduce network distance or jitter
+
+#### 2. Review
+* How do you evolve your workload to take advantage of new releases?
+
+Solutions: AWS Blog, What's new section on the AWS website
+
+#### 3. Monitoring
+* How do you monitor your resources to ensure they are performing as expected?
+
+Solutions: CloudWatch that triggers actions on Lambda
+
+#### 4. Tradeoffs
+* How do you use tradeoffs to improve performance?
+
+Solutions: ElastiCache, CloudFront, Snowball, RDS Read replicas.
+
+### Solutions
 * Reduce load on your database and reduce latency with RDS read replicas
 * Predictable latency between your office and AWS using Direct Connect
 * Reduce latency by adding infrastructure in the region close to your cutsomers
 * Reduce latency by cache stuff - ElastiCache or CloudFront
 
 ## 5. Cost Optimization
+Run systems to deliver business value at the lowest price point.
+
+Design Principles:
 * Adopt a consumption model
 * Measure overall efficiency
 * Stop spending money on data center operations
 * Analyze and attribute expenditure
 * Use managed and application level services to reduce cost of ownership
 
-### Services
-* Cost-effective Resources: Cost Explorer - RI recommendations and more. CloudWatch and Trust Advisor. Aurora - remove licensing costs. AWS Direct Connect and Amazon CloudFront to optimize data transfer.
-* Match supply and demand: Auto Scaling.
-* Expenditure Awareness: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
-* Optimizing Over Time: AWS News Blog, What's new section, and AwS Trusted Advisor.
+### Areas
+**1. Expenditure Awareness**
+* How do you govern usage?
+* How do you monitor usage and cost?
+* How do you decommission resources?
+
+Services: Cost Explorer to track usage. AWS Budgets - get notify if expanses are above a threshold.
+
+**2. Cost-effective Resources**
+* How do you evaluate cost when you select services?
+* How do you meet cost targets when you select resource type and size?
+* How do you use pricing models to reduce cost?
+* How do you plan for data transfer charges?
+
+Services: Cost Explorer - RI recommendations and more. CloudWatch and Trust Advisor. Aurora - remove licensing costs. AWS Direct Connect and Amazon CloudFront to optimize data transfer.
+
+**3. Match supply and demand**
+*  How do you match supply of resources with demand?
+
+Services: Auto Scaling
+
+**4. Optimizing Over Time**
+* How do you evaluate new services?
+
+Services: AWS News Blog, What's new section, and AwS Trusted Advisor.

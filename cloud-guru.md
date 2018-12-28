@@ -984,24 +984,6 @@ Scaling of DynamoDB vs RDS:
 ### Databases Quiz
 * Amazon Athena is an interactive query service that makes it easy to analyse data in Amazon S3, using standard SQL commands. It will work with a number of data formats including "JSON", "Apache Parquet", "Apache ORC" amongst others, but "XML" is not a format that is supported.
 
-## The Real World - Creating a fault tolerant Word Press Site
-### Getting Setup
-### Setting Up EC2
-### AutoScaling
-### CloudFormation!
-### Want To Be A Real Solutions Architect? You Need To Know CloudFormation!
-
-## Whitepapers & The Well Architected Framework
-### What Else Do I Need To Know?
-### Architecting for the AWS Cloud: Best Practices
-### Introduction To The Well Architected Framework
-### ecurity
-### DReliability
-### erformance Efficiency
-### Cost Optimization
-### Operational Excellence
-### Summary
-
 ## Additional Exam Tips
 ### Exam Tips Based On Student Feedback
 ### Consolidated Billing
