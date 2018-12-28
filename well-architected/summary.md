@@ -1,6 +1,5 @@
 ## Table of Contents
 
-
 * [1. Operationl Excellence](#1-operationl-excellence)
   * [Areas](#areas)
 * [2. Security](#2-security)
@@ -9,10 +8,6 @@
   * [Areas](#areas-2)
 * [4. Performance Efficiency](#4-performance-efficiency)
   * [Areas](#areas-3)
-    * [1. Selection](#1-selection)
-    * [2. Review](#2-review)
-    * [3. Monitoring](#3-monitoring)
-    * [4. Tradeoffs](#4-tradeoffs)
 * [5. Cost Optimization](#5-cost-optimization)
   * [Areas](#areas-4)
 
@@ -133,7 +128,7 @@ Design Principles:
 
 ### Areas
 
-#### 1. Selection
+**1. Selection**
 Resource Types:
 
 1.1 Compute
@@ -180,17 +175,17 @@ Solutions: RDS, DynamoDB, etc
 
 Solutions: Route 53 with latency-based routing, VPC endpoints, AWS Direct Connect to reduce network distance or jitter
 
-#### 2. Review
+**2. Review**
 * How do you evolve your workload to take advantage of new releases?
 
 Solutions: AWS Blog, What's new section on the AWS website
 
-#### 3. Monitoring
+**3. Monitoring**
 * How do you monitor your resources to ensure they are performing as expected?
 
 Solutions: CloudWatch that triggers actions on Lambda
 
-#### 4. Tradeoffs
+**4. Tradeoffs**
 * How do you use tradeoffs to improve performance?
 
 Solutions: ElastiCache, CloudFront, Snowball, RDS Read replicas.
