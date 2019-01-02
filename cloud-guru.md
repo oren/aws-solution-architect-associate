@@ -71,10 +71,24 @@ fundamentals: key, value, version id, metadata (who owns it), subresourses (ACL 
 
 Storage Tiers/Classes:
 
-    S3 Standard - 99.99% availability, 99.999999999% durability, stored redundantly multiple devices in multiple facilities, designed to sustain loss of 2 facilities, immediately available, frequently accessed.
-    S3 - IA (Infrequently Accessed) - 99.50% availability, 99.999999999% durability. Lower fee but charge for retrieval.
-    S3 One zone IA (only one AZ) - not multiple AZ resilience. Deprecated: RRS - reduce redundancy storage
-    Glacier (archived data, 3-5 hours to access) - cheap.
+    S3 Standard - 99.99% availability, 99.999999999% durability, stored redundantly multiple devices in multiple facilities, designed to sustain loss of 2 facilities, immediately available, frequently accessed
+    S3 - IA (Infrequently Accessed) - 99.9% availability, 99.999999999% durability. Lower fee but charge for retrieval
+    S3 One zone IA (only one AZ) - 99.5% availability. not multiple AZ resilience. Deprecated: RRS - reduce redundancy storage
+    Glacier (archived data, 3-5 hours to access) - cheapest
+
+Prices:
+* S3 - $0.0230 per GB
+* S3 IA - $0.0125 per GB,
+* S3 OneZone-IA - $0.0100 per GB
+* Legacy S3-RRS - $0.0240 per GB
+* Glacier - $0.0040 per GB
+
+URLs:
+* http://bucket.s3-aws-region.amazonaws.com
+* http://s3-aws-region.amazonaws.com/bucket
+
+Of the offered solutions S3 One Zone-IA is the cheapest suitable option.
+Glacier cannot be considered as it is not intended for direct access, however it comes in at around $0.004 per GB.
 
 Charge for: storage, requests, storage management pricing, data transfer pricing (cross region replication), transfer acceleration (use cloudfront to make things fast. user upload to an edge location first)
 
@@ -119,7 +133,6 @@ Here are a few commands to try:
 
 s3 rb s3://oren-test-bucket-546
 s3 cp --recursive s3://oren-test-bucket-545 s3://oren-test-bucket-548-sidney
-
 
 **Lifecycle Management, S3-IA & Glacier Lab:**
 
@@ -983,21 +996,3 @@ Scaling of DynamoDB vs RDS:
 
 ### Databases Quiz
 * Amazon Athena is an interactive query service that makes it easy to analyse data in Amazon S3, using standard SQL commands. It will work with a number of data formats including "JSON", "Apache Parquet", "Apache ORC" amongst others, but "XML" is not a format that is supported.
-
-## Additional Exam Tips
-### Exam Tips Based On Student Feedback
-### Consolidated Billing
-### AWS Organizations Lab
-### Cross Account Access
-### Resource Groups & Tagging
-### VPC Peering
-### Direct Connect
-### Security Token Service
-### Active Directory Integration
-### Workspaces
-### ECS - Part 1 - What is Docker
-### ECS - Part 2 - What is ECS?
-
-### Scenario Quiz
-### Mini Exam
-### Final Practice Exam
