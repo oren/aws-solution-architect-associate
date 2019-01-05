@@ -284,7 +284,6 @@ Which of the following is not a feature of AWS Organizations?
 
 Answer: 4 (I think)
 
-
 ---
 
 You successfully configure VPC Peering between VPC-A and VPC-B. You then establish an IGW and a Direct-Connect connection in VPC-B. Can instances in VPC-A connect to your corporate office via the Direct-Connect service, and connect to the Internet via the IGW?
@@ -349,5 +348,3 @@ Further information:
 CloudFormation supports YAML and JSON
 
 ---
-
-
