@@ -1,7 +1,5 @@
 Prepare:
 * https://aws.amazon.com/certification/certification-prep/
-* https://www.whizlabs.com/aws-solutions-architect-associate/
-* https://www.whizlabs.com/blog/aws-certified-solutions-architect-associate-released-february-2018/
 
 White Papers - https://aws.amazon.com/whitepapers
 * Overview of Amazon Web Services
@@ -11,7 +9,6 @@ White Papers - https://aws.amazon.com/whitepapers
 * AWS Storage Services Overview
 
 FAQ - https://aws.amazon.com/faqs/
-
 
 Tips and Notes
 * https://acloud.guru/forums/aws-certified-solutions-architect-associate/discussion/-Kgy6EyakT-cTLL6mhOo/how_can_you_score_highest_in_e
