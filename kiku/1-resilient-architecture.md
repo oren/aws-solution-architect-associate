@@ -28,9 +28,9 @@ Encryption:
 
 ### 5. Glacier
 Retrival types:
-* expadated - more expensive and up to 5 min
-* standard
-* bulk - cheap but 12 hours
+* expedited - more expensive. 1-5 min
+* standard - cheap. 3-5 hours
+* bulk - cheapest but 5-12 hours
 
 ## High available vs fault-tolerant
 fault-tolerant is higher bar than HA. It means the user should not have any impact!
